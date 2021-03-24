@@ -112,7 +112,7 @@
             android:text="@string/createAccount"
             android:textSize="15sp"
             android:textColor="@color/txtAccent_0c"
-            android:background="none"
+            android:background="#0000"
             android:layout_marginTop="30dp"
             android:layout_marginHorizontal="20dp"/>
 
@@ -123,7 +123,7 @@
             android:text="@string/forgotPassword"
             android:textSize="15sp"
             android:textColor="@color/txtAccent_0c"
-            android:background="none"
+            android:background="#0000"
             android:layout_marginHorizontal="20dp"/>
 
 
