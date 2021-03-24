@@ -5,6 +5,9 @@
         <!-- Activity Login  -->
         <string name="Login">Login</string>
         <string name="Password">Password</string>
-        <string name="Email">E-mal</string>
+        <string name="Email">E-mail</string>
+        <string name="otherLoginMethods">─── Other ───</string>
+        <string name="forgotPassword">Forgot password?</string>
+        <string name="createAccount">Create new account</string>
 
 </resources>

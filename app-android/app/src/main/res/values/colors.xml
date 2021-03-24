@@ -18,5 +18,12 @@
         <color name="txt_0c">#FFFFFFFF</color>
         <color name="txt_1c">#FFCFCFCF</color>
         <color name="txt_2c">#FFAFAFAF</color>
+        <color name="txtAccent_0c">#FFCB5156</color>
+
+        <!-- Activity Login -->
+        <color name="loginGoogle_0c">#FFDB4437</color>
+        <color name="loginFacebook_0c">#FF4267B2</color>
+        <color name="loginTwitter_0c">#FF1DA1F2</color>
+
 
 </resources>
