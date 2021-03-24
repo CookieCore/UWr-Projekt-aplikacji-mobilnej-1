@@ -102,3 +102,5 @@ lint/tmp/
 .externalNativeBuild
 .cxx
 local.properties
+
+app-android/.idea/
