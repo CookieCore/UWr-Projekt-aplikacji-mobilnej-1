@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Iugales</string>
+
+    <!-- Our -->
+        <!-- Activity Login  -->
+        <string name="Login">Login</string>
+        <string name="Password">Password</string>
+        <string name="Email">E-mal</string>
+
+</resources>
