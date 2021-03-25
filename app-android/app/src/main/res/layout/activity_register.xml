@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg_0c"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="@string/register"
+                android:textColor="@color/txt_0c"
+                android:textSize="40sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="30dp"
+                android:gravity="left"
+                android:text="@string/registerPersonalData"
+                android:textColor="@color/txt_0c"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/register_fistName_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:backgroundTint="@color/txt_0c"
+                android:hint="@string/registerFirstName"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/txt_1c"
+                android:textColorHint="@color/txt_2c"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/register_lastName_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:backgroundTint="@color/txt_0c"
+                android:hint="@string/registerLastName"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/txt_1c"
+                android:textColorHint="@color/txt_2c"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="left"
+                android:text="@string/registerLoginData"
+                android:textColor="@color/txt_0c"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/register_email_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:backgroundTint="@color/txt_0c"
+                android:hint="@string/registerEmail"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/txt_1c"
+                android:textColorHint="@color/txt_2c"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/register_password_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:backgroundTint="@color/txt_0c"
+                android:hint="@string/registerPassword"
+                android:inputType="textPassword"
+                android:textColor="@color/txt_1c"
+                android:textColorHint="@color/txt_2c"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="left"
+                android:text="@string/registerPasswordRules"
+                android:textColor="@color/txt_0c"
+                android:textSize="10sp" />
+
+            <CheckBox
+                android:id="@+id/register_manager_chkB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/registerManager"
+                android:textColor="@color/txt_1c"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/termsAndConditions_ClickableTextView"
+                android:Clickable="true"
+                android:layout_marginTop="5dp"
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:background="#0000"
+                android:text="@string/registerTermsAndConditionsButton"
+                android:textColor="@color/txtAccent_0c"
+                android:layout_gravity="left"
+                android:textSize="15sp" />
+            <CheckBox
+                android:id="@+id/register_tesrmsAndConditions_chkB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/registerTermsAndConditions"
+                android:textColor="@color/txt_1c"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/register_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:backgroundTint="@color/bg_2c"
+                android:paddingVertical="10dp"
+                android:text="@string/registerButton"
+                android:textColor="@color/txt_1c"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/haveAccount_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="30dp"
+                android:background="#0000"
+                android:text="@string/haveAccount"
+                android:textColor="@color/txtAccent_0c"
+                android:textSize="15sp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
