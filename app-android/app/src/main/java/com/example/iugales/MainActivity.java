@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.debugGoHomePageUsr.setOnClickListener(v -> {
-            Toast.makeText(getApplicationContext(),"Not Implement Yet", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, UserHomePage.class);
+            startActivity(intent);
         });
 
         binding.debugGoHomePageManager.setOnClickListener(v -> {
