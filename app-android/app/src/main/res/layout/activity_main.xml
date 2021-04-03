@@ -38,6 +38,12 @@
             android:layout_height="wrap_content"
             android:text="GO HOMEPAGE MANAGER(DEBUG)"
             />
+        <Button
+            android:id="@+id/debug_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout(DEBUG)"
+            />
         <TextView
             android:id="@+id/debug_login_indicator"
             android:layout_width="wrap_content"

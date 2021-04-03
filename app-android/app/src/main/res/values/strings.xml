@@ -25,5 +25,11 @@
         <string name="registerTermsAndConditionsButton">terms and conditions</string>
         <string name="registerButton">Register</string>
         <string name="haveAccount">I already have an account</string>
+        <string name="errorTermsAndConditions"  >You need to agree to our terms and conditions</string>
+        <string name="errorFirstName"           >Tell us your first name</string>
+        <string name="errorLastName"            >Tell us your last name</string>
+        <string name="errorPassword"            >Password need to be larger then 6 characters</string>
+        <string name="errorEmail"               >Write correct email</string>
+        <string name="errorRegister"            >Authentication failed.</string>
 
 </resources>
