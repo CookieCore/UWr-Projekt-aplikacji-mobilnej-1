@@ -13,7 +13,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -64,6 +64,28 @@
                 android:textColor="@color/txt_1c"
                 android:textSize="20sp" />
 
+            <Button
+                android:id="@+id/forgotPassword_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:background="#0000"
+                android:text="@string/forgotPassword"
+                android:textColor="@color/txt_0c"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/reSendConfirmEmail_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#0000"
+                android:text="@string/reSendConfirmEmail"
+                android:textColor="@color/txt_0c"
+                android:textSize="15sp"
+                android:visibility="gone"
+                />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -71,7 +93,7 @@
                 android:layout_marginTop="30dp"
                 android:gravity="center"
                 android:text="@string/otherLoginMethods"
-                android:textColor="@color/txt_0c"
+                android:textColor="@color/txt_2c"
                 android:textSize="20sp" />
 
             <LinearLayout
@@ -123,18 +145,7 @@
                 android:layout_marginTop="30dp"
                 android:background="#0000"
                 android:text="@string/createAccount"
-                android:textColor="@color/txtAccent_0c"
-                android:textSize="15sp" />
-
-            <Button
-                android:id="@+id/forgotPassword_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginBottom="30dp"
-                android:background="#0000"
-                android:text="@string/forgotPassword"
-                android:textColor="@color/txtAccent_0c"
+                android:textColor="@color/txt_0c"
                 android:textSize="15sp" />
 
 
