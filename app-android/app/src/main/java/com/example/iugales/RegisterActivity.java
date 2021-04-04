@@ -78,41 +78,39 @@ public class RegisterActivity  extends AppCompatActivity {
         String lastName     = lastNameEt.getText().toString();
         String email        = emailEt.getText().toString();
         String password1    = password1Et.getText().toString();
-        Boolean termsAndConditions  = termsAndConditionsChkb.isChecked();
+        boolean termsAndConditions  = termsAndConditionsChkb.isChecked();
         Boolean projectManager      = projectManagerChkb.isChecked();
 
-        Boolean isError = false;
+        boolean isError = false;
 
         // check data
         // terms and conditions checked
         if (!termsAndConditions) {
-            termsAndConditionsChkb.setError(getString(R.string.errorTermsAndConditions));
+            termsAndConditionsChkb.setError(getString(R.string.regErrorTermsAndConditions));
             isError = true;
         }
         // first name no empty
         if (TextUtils.isEmpty(firstName)) {
-            firstNameEt.setError(getString(R.string.errorFirstName));
+            firstNameEt.setError(getString(R.string.regErrorFirstName));
             isError = true;
         }
         // last name no empty
         if (TextUtils.isEmpty(lastName)) {
-            lastNameEt.setError(getString(R.string.errorLastName));
+            lastNameEt.setError(getString(R.string.regErrorLastName));
             isError = true;
         }
         // valid email
         if (!Util.isValidEmail(email)) {
-            emailEt.setError(getString(R.string.errorEmail));
+            emailEt.setError(getString(R.string.regErrorEmail));
             isError = true;
         }
         // password larger then
         if (TextUtils.isEmpty(password1) || password1.length() <= 6) {
-            password1Et.setError(getString(R.string.errorPassword));
+            password1Et.setError(getString(R.string.regErrorPassword));
             isError = true;
         }
 
-        if (isError) {
-            return;
-        } else {
+        if (!isError) {
             // register
             mAuth.createUserWithEmailAndPassword(email, password1)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -123,11 +121,14 @@ public class RegisterActivity  extends AppCompatActivity {
                             String uid = task.getResult().getUser().getUid();
                             // put meta for user
                             Map<String, Object> newUsr = new HashMap<>();
+                            newUsr.put("firstName", firstName);
+                            newUsr.put("lastName", lastName);
                             newUsr.put("projectManager", projectManager);
                             db.collection("Users").document(uid).set(newUsr);
                             FirebaseUser curUsr = mAuth.getCurrentUser();
                             curUsr.sendEmailVerification();
-                            // logged in, go to main and do the rest there
+                            // Registered, logged out, go to main and do the rest there
+                            mAuth.signOut();
                             Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                             startActivity(intent);
                         } else {
@@ -135,7 +136,7 @@ public class RegisterActivity  extends AppCompatActivity {
                             Log.d(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(
                                 RegisterActivity.this,
-                                getString(R.string.errorRegister),
+                                getString(R.string.regErrorRegister),
                                 Toast.LENGTH_SHORT
                             ).show();
                         }
