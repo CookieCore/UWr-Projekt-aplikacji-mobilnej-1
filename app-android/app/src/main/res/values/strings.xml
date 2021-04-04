@@ -10,6 +10,9 @@
         <string name="otherLoginMethods">─── Other ───</string>
         <string name="forgotPassword">Forgot password?</string>
         <string name="createAccount">Create new account</string>
+        <string name="logErrorEmail"            >Write valid email</string>
+        <string name="logErrorEmailOrPassword"  >Email or password are incorrect</string>
+        <string name="logErrorEmailNotConfirm"  >Pleas confirm your email</string>
 
         <!-- Activity Register  -->
         <string name="register">Register</string>
