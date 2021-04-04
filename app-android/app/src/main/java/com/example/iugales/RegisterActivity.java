@@ -124,13 +124,22 @@ public class RegisterActivity  extends AppCompatActivity {
                             newUsr.put("firstName", firstName);
                             newUsr.put("lastName", lastName);
                             newUsr.put("projectManager", projectManager);
-                            db.collection("Users").document(uid).set(newUsr);
-                            FirebaseUser curUsr = mAuth.getCurrentUser();
-                            curUsr.sendEmailVerification();
+                            db.collection("Users").document(uid).set(newUsr)
+                                .addOnCompleteListener(n -> {
+                                    FirebaseUser curUsr = mAuth.getCurrentUser();
+                                    curUsr.sendEmailVerification();
+                                    mAuth.signOut();
+                                    Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                    startActivity(intent);
+                                })
+                                .addOnFailureListener(e -> {
+                                    Toast.makeText(
+                                            RegisterActivity.this,
+                                            getString(R.string.regErrorServerError),
+                                            Toast.LENGTH_LONG
+                                    ).show();
+                                });
                             // Registered, logged out, go to main and do the rest there
-                            mAuth.signOut();
-                            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                            startActivity(intent);
                         } else {
                             // something went wrong
                             Log.d(TAG, "createUserWithEmail:failure", task.getException());

@@ -31,5 +31,6 @@
         <string name="regErrorPassword"            >Password need to be larger then 6 characters</string>
         <string name="regErrorEmail"               >Write correct email</string>
         <string name="regErrorRegister"            >Authentication failed.</string>
+        <string name="regErrorServerError"         >Unknown error, contact administrator.</string>
 
 </resources>
