@@ -18,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
-    private Button debugLogoutBtn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,16 +25,14 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        debugLogoutBtn = view.findViewById(R.id.debug_logout);
-
         mAuth = FirebaseAuth.getInstance();
 
         FirebaseUser currUsr = mAuth.getCurrentUser();
         if(currUsr != null) {
             String email = currUsr.getEmail();
-            debugLogoutBtn.setText("Logged as " + email + ", Logout(DEBUG)");
+            binding.debugLogout.setText("Logged as " + email + ", Logout(DEBUG)");
         } else {
-            debugLogoutBtn.setText("Logged as NULL, (no need to)Logout(DEBUG)");
+            binding.debugLogout.setText("Logged as NULL, (no need to)Logout(DEBUG)");
         }
 
         binding.debugGoLogin.setOnClickListener(v -> {
@@ -55,7 +51,10 @@ public class MainActivity extends AppCompatActivity {
 
         binding.debugLogout.setOnClickListener(v -> {
             mAuth.signOut();
-            debugLogoutBtn.setText("Logged as NULL, (no need to)Logout(DEBUG)");
+            binding.debugLogout.setText("Logged as NULL, (no need to)Logout(DEBUG)");
         });
+
+        binding.debugLoginIndicator.setText("debug text");
+
     }
 }
