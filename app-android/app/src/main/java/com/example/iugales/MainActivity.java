@@ -1,12 +1,11 @@
 package com.example.iugales;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.iugales.databinding.ActivityMainBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.Theme_Iugales); // turn off splash screen
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.debugGoHomePageUsr.setOnClickListener(v -> {
-            Intent intent = new Intent(this, UserHomePage.class);
+            Intent intent = new Intent(this, HomePage.class);
             startActivity(intent);
         });
 
