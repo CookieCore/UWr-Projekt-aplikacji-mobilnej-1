@@ -104,3 +104,5 @@ lint/tmp/
 local.properties
 
 app-android/.idea/
+
+.idea/
