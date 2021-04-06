@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Iugales">
+        android:theme="@style/splashScreenTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,7 @@
         <activity
             android:name=".RegisterActivity"
             android:parentActivityName=".LoginActivity" />
-        <activity android:name=".UserHomePage"/>
+        <activity android:name=".HomePage"/>
     </application>
 
 </manifest>
