@@ -11,9 +11,17 @@
         <string name="forgotPassword">Forgot password?</string>
         <string name="reSendConfirmEmail">Send Email confirmation again.</string>
         <string name="createAccount">Create new account</string>
-        <string name="logErrorEmail"            >Write valid email</string>
-        <string name="logErrorEmailOrPassword"  >Email or password are incorrect</string>
-        <string name="logErrorEmailNotConfirm"  >Pleas confirm your email</string>
+        <string name="logErrorEmail"            >Write valid email.</string>
+        <string name="logErrorEmailOrPassword"  >Email or password are incorrect. Try again or reset the password by clicking \"Forgot password?\" button.</string>
+        <string name="logErrorEmailNotConfirm"  >Pleas confirm your email.</string>
+
+        <!-- Activity Verify -->
+        <string name="verify">Verification</string>
+        <string name="verifyMessage">Almost there.\n\n Before you can log in, you need to confirm your email address first.\n\n Check your email box for verification link from \"no-reply\" email address. If you can\'t find it check spam folder or click \"Resend the verification email\" button.</string>
+        <string name="verifyEmailMessage">You are trying to log in as</string>
+        <string name="verifyNoEmail">&lt;user&gt;@&lt;host.address&gt;</string>
+        <string name="verifyLogin">Try logging in again</string>
+        <string name="verifyResend">Resend the verification email</string>
 
         <!-- Activity Register  -->
         <string name="register">Register</string>

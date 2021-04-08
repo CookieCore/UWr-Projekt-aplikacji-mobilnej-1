@@ -5,13 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.iugales.databinding.ActivityLoginBinding;
-import com.example.iugales.databinding.ActivityMainBinding;
 import com.example.iugales.util.Util;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -98,11 +96,15 @@ public class LoginActivity  extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        forgetPasswordBtn.setVisibility(View.GONE);
+                        binding.loginErrorIndicator.setVisibility(View.INVISIBLE);
                     }
                 });
         }
     }
+
+    //
+    //binding.loginErrorIndicator.setText(R.string.logErrorEmailOrPassword);
+    //binding.loginErrorIndicator.setVisibility(View.INVISIBLE);
 
     private void reSendConfirmEmail() {
         reSendConfirmEmailBtn.setVisibility(View.GONE);
@@ -136,7 +138,8 @@ public class LoginActivity  extends AppCompatActivity {
                                 }
                             } else {
                                 loginBtn.setError(getString(R.string.logErrorEmailOrPassword));
-                                forgetPasswordBtn.setVisibility(View.VISIBLE);
+                                binding.loginErrorIndicator.setText(R.string.logErrorEmailOrPassword);
+                                binding.loginErrorIndicator.setVisibility(View.VISIBLE);
                             }
                         }
                     });
@@ -145,7 +148,7 @@ public class LoginActivity  extends AppCompatActivity {
 
     private void loginWithEmailAndPassword() {
 
-        forgetPasswordBtn.setVisibility(View.GONE);
+        binding.loginErrorIndicator.setVisibility(View.INVISIBLE);
         reSendConfirmEmailBtn.setVisibility(View.GONE);
 
         String email = emailEt.getText().toString();
@@ -177,7 +180,8 @@ public class LoginActivity  extends AppCompatActivity {
                             }
                         } else {
                             loginBtn.setError(getString(R.string.logErrorEmailOrPassword));
-                            forgetPasswordBtn.setVisibility(View.VISIBLE);
+                            binding.loginErrorIndicator.setText(R.string.logErrorEmailOrPassword);
+                            binding.loginErrorIndicator.setVisibility(View.VISIBLE);
                         }
                     }
                 });

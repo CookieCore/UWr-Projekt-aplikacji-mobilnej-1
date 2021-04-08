@@ -57,23 +57,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="40dp"
                 android:backgroundTint="@color/bg_2c"
                 android:paddingVertical="10dp"
                 android:text="@string/loginButton"
                 android:textColor="@color/txt_1c"
                 android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/forgotPassword_btn"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/login_errorIndicator"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:background="#0000"
-                android:text="@string/forgotPassword"
-                android:textColor="@color/txt_0c"
-                android:textSize="15sp"
-                android:visibility="gone" />
+                android:layout_marginVertical="10dp"
+                android:gravity="center"
+                android:textColor="@color/txtAlert_0c"
+                android:textSize="14sp"
+                android:visibility="invisible"/>
 
             <Button
                 android:id="@+id/reSendConfirmEmail_btn"
@@ -90,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="1dp"
                 android:gravity="center"
                 android:text="@string/otherLoginMethods"
                 android:textColor="@color/txt_2c"
@@ -145,12 +145,21 @@
                 android:layout_marginTop="30dp"
                 android:background="#0000"
                 android:text="@string/createAccount"
-                android:textColor="@color/txt_0c"
+                android:textColor="@color/txtAccent_0c"
                 android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/forgotPassword_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:background="#0000"
+                android:text="@string/forgotPassword"
+                android:textColor="@color/txtAccent_0c"
+                android:textSize="15sp"/>
 
 
         </LinearLayout>
     </ScrollView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+

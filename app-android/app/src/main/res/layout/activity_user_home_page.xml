@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_nav_bar"
-        android:background="@color/bg_2c"
+        android:background="@color/txtAccent_1c"
         app:itemTextColor="@drawable/nav_bar_color"
         app:itemIconTint="@drawable/nav_bar_color"/>
 

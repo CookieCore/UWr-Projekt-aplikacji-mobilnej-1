@@ -5,6 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Country roads! Take me Home! To the place, i belong, west Virginia, mountain mama"
+        android:textColor="@color/txt_2c"
         android:textSize="40sp"
         android:gravity="center"/>
 
