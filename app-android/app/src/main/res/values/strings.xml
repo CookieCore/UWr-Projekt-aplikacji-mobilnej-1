@@ -45,4 +45,12 @@
         <string name="regErrorRegister"            >Authentication failed.</string>
         <string name="regErrorServerError"         >Unknown error, contact administrator.</string>
 
+        <!-- Contact  -->
+        <string name="contactName">&lt;Contact.name&gt;</string>
+        <string name="contactLastMessage">&lt;Contact.lastMessage&gt;</string>
+        <string name="contactLastMessageDate">&lt;Contact.lastMessageDate&gt;</string>
+
+        <!-- Conversation  -->
+        <string name="textHint">Text</string>
+
 </resources>
