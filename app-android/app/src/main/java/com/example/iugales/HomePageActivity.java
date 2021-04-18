@@ -11,15 +11,15 @@ import androidx.fragment.app.Fragment;
 import com.example.iugales.databinding.ActivityUserHomePageBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class HomePage extends AppCompatActivity {
+public class HomePageActivity extends AppCompatActivity {
 
-    private ActivityUserHomePageBinding binding;
+    public ActivityUserHomePageBinding mBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityUserHomePageBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
+        mBinding = ActivityUserHomePageBinding.inflate(getLayoutInflater());
+        View view = mBinding.getRoot();
         setContentView(view);
 
         // select home from NavBar
@@ -29,7 +29,7 @@ public class HomePage extends AppCompatActivity {
                 .commit();
 
         // navBar
-        binding.navBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        mBinding.navBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment selected = null;

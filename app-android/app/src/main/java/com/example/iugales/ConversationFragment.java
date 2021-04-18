@@ -18,6 +18,7 @@ public class ConversationFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ((HomePageActivity) getActivity()).mBinding.navBar.setVisibility(View.GONE);
     }
 
     @Nullable
@@ -33,5 +34,11 @@ public class ConversationFragment extends Fragment {
         mBinding.msgContainer.setAdapter(mAdapter);
 
         return v;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        ((HomePageActivity) getActivity()).mBinding.navBar.setVisibility(View.VISIBLE);
     }
 }

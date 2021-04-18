@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.debugGoHomePageUsr.setOnClickListener(v -> {
-            Intent intent = new Intent(this, HomePage.class);
+            Intent intent = new Intent(this, HomePageActivity.class);
             startActivity(intent);
         });
 

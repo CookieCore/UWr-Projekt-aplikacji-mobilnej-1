@@ -46,7 +46,7 @@ public class LoginActivity  extends AppCompatActivity {
         reSendConfirmEmailBtn   = view.findViewById(R.id.reSendConfirmEmail_btn);
 
         binding.loginBtn.setOnClickListener(v -> {
-//            Intent intent = new Intent(this, HomePage.class);
+//            Intent intent = new Intent(this, HomePageActivity.class);
 //            startActivity(intent);
             loginWithEmailAndPassword();
         });
