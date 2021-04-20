@@ -1,5 +1,6 @@
 package com.example.iugales;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.iugales.databinding.ActivityUserHomePageBinding;
+import com.example.iugales.util.Util;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomePageActivity extends AppCompatActivity {
@@ -27,6 +29,13 @@ public class HomePageActivity extends AppCompatActivity {
                 .beginTransaction()
                 .replace(R.id.fragment_container, new HomeFragment())
                 .commit();
+
+        // Check if user is signed in (non-null) and go back or stay.
+        if (!Util.isLoggedIn()) {
+            // if logged in, and email is varied. Go to main
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
 
         // navBar
         mBinding.navBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

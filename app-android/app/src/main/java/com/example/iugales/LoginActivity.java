@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +28,7 @@ public class LoginActivity  extends AppCompatActivity {
 
     private EditText emailEt, passwordEt;
     private Button loginBtn, forgetPasswordBtn, reSendConfirmEmailBtn;
+    private TextView errorIndicator;
 
     private String TAG = "login";
 
@@ -44,6 +47,14 @@ public class LoginActivity  extends AppCompatActivity {
         loginBtn                = view.findViewById(R.id.login_btn);
         forgetPasswordBtn       = view.findViewById(R.id.forgotPassword_btn);
         reSendConfirmEmailBtn   = view.findViewById(R.id.reSendConfirmEmail_btn);
+        errorIndicator = view.findViewById(R.id.login_errorIndicator);
+
+        // Check if user is signed in (non-null) and go back or stay.
+        if (Util.isLoggedIn()) {
+            // if logged in, and email is varied. Go to main
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
 
         binding.loginBtn.setOnClickListener(v -> {
 //            Intent intent = new Intent(this, HomePageActivity.class);
@@ -65,23 +76,6 @@ public class LoginActivity  extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and go back or stay.
-        FirebaseUser curUsr = mAuth.getCurrentUser();
-        if (curUsr != null) {
-            if (!curUsr.isEmailVerified()) {
-                // if logged in, but email not varied. Stay
-                mAuth.signOut();
-            } else {
-                // if logged in, and email is varied. Go to main
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-            }
-        }
-    }
-
     private void forgetPassword() {
         String email = emailEt.getText().toString();
         boolean isError = false;
@@ -97,6 +91,11 @@ public class LoginActivity  extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         binding.loginErrorIndicator.setVisibility(View.INVISIBLE);
+                        Toast.makeText(
+                                getApplicationContext(),
+                                getString(R.string.sendingEmailPassword),
+                                Toast.LENGTH_SHORT
+                        ).show();
                     }
                 });
         }
@@ -132,12 +131,17 @@ public class LoginActivity  extends AppCompatActivity {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 reSendConfirmEmailBtn.setVisibility(View.GONE);
+                                                Toast.makeText(
+                                                        getApplicationContext(),
+                                                        getString(R.string.sendingEmailConfirmEmail),
+                                                        Toast.LENGTH_SHORT
+                                                ).show();
                                             }
                                         });
                                     mAuth.signOut();
                                 }
                             } else {
-                                loginBtn.setError(getString(R.string.logErrorEmailOrPassword));
+                                errorIndicator.setText(getString(R.string.logErrorEmailOrPassword));
                                 binding.loginErrorIndicator.setText(R.string.logErrorEmailOrPassword);
                                 binding.loginErrorIndicator.setVisibility(View.VISIBLE);
                             }
@@ -169,7 +173,7 @@ public class LoginActivity  extends AppCompatActivity {
                             FirebaseUser curUsr = mAuth.getCurrentUser();
                             if (!curUsr.isEmailVerified()) {
                                 // email not verified
-                                loginBtn.setError(getString(R.string.logErrorEmailNotConfirm));
+                                errorIndicator.setText(getString(R.string.logErrorEmailNotConfirm));
                                 reSendConfirmEmailBtn.setVisibility(View.VISIBLE);
                                 mAuth.signOut();
                             } else {
@@ -179,7 +183,7 @@ public class LoginActivity  extends AppCompatActivity {
                                 startActivity(intent);
                             }
                         } else {
-                            loginBtn.setError(getString(R.string.logErrorEmailOrPassword));
+                            errorIndicator.setText(getString(R.string.logErrorEmailOrPassword));
                             binding.loginErrorIndicator.setText(R.string.logErrorEmailOrPassword);
                             binding.loginErrorIndicator.setVisibility(View.VISIBLE);
                         }

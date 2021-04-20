@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.iugales.databinding.ActivityMainBinding;
+import com.example.iugales.util.Util;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -54,7 +55,21 @@ public class MainActivity extends AppCompatActivity {
             binding.debugLogout.setText("Logged as NULL, (no need to)Logout(DEBUG)");
         });
 
+        binding.debugAuto.setOnClickListener(v -> {
+            loadPage();
+        });
+
         binding.debugLoginIndicator.setText("debug text");
 
+    }
+
+    public void loadPage() {
+        Intent intent;
+        if(Util.isLoggedIn()) {
+            intent = new Intent(this, HomePageActivity.class);
+        } else {
+            intent = new Intent(this, LoginActivity.class);
+        }
+        startActivity(intent);
     }
 }
