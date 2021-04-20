@@ -47,6 +47,12 @@ public class RegisterActivity  extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
+        // Check if user is signed in (non-null) and go back or stay.
+        if (Util.isLoggedIn()) {
+            // if logged in, and email is varied. Go to main
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
 
         // user inputs
         firstNameEt             = view.findViewById(R.id.register_fistName_editText);
@@ -59,18 +65,6 @@ public class RegisterActivity  extends AppCompatActivity {
         binding.registerBtn.setOnClickListener(v -> {
             registerWithEmailAndPassword();
         });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currUsr = mAuth.getCurrentUser();
-        if (currUsr != null) {
-            // if logged in go back to main and make them to the rest
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
     }
 
     private void registerWithEmailAndPassword() {
