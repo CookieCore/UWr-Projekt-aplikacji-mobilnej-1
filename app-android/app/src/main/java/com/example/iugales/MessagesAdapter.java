@@ -40,34 +40,34 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
             case 5:
                 holder.imageView.setVisibility(View.VISIBLE);
                 holder.imageView.setImageResource(R.drawable.ic_ico_v2);
-                holder.content.setText("your computer has virus");
+                holder.content.setText("how are you?");
                 break;
             case 4:
                 setAsMe(holder);
                 holder.imageView.setVisibility(View.VISIBLE);
-                holder.content.setText("oh no. what can i do to get rid of it, is it to late? please help me");
+                holder.content.setText("im five, i just got from work, and im very tired, how about you? i've heard you got a puppy");
                 break;
             case 3:
                 holder.imageView.setVisibility(View.VISIBLE);
                 holder.imageView.setImageResource(R.drawable.ic_ico_v2);
-                holder.content.setText("show me ur vagene pic");
+                holder.content.setText("yeah it's a golden retriever");
                 break;
             case 2:
                 setAsMe(holder);
                 holder.imageView.setVisibility(View.VISIBLE);
-                holder.content.setText("no");
+                holder.content.setText("so cute");
                 break;
             case 1:
                 holder.imageView.setVisibility(View.VISIBLE);
                 holder.imageView.setImageResource(R.drawable.ic_ico_v2);
-                holder.content.setText("pls");
+                holder.content.setText("i know.");
                 break;
             case 0:
                 holder.date.setVisibility(View.VISIBLE);
                 holder.date.setText(new Date().toString());
                 holder.imageView.setVisibility(View.VISIBLE);
                 holder.imageView.setImageResource(R.drawable.ic_ico_v2);
-                holder.content.setText("bitch lasagna");
+                holder.content.setText("he just pooped");
                 break;
         }
 
