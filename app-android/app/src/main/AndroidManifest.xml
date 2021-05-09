@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Iugales">
-        <activity android:name=".MainActivity"
-            android:theme="@style/splashScreenTheme">       <!-- Splash screen -->
+        <activity android:name=".TestNavigationActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/splashScreenTheme"> <!-- Splash screen -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +25,7 @@
         <activity
             android:name=".RegisterActivity"
             android:parentActivityName=".LoginActivity" />
-        <activity android:name=".HomePageActivity"/>
+        <activity android:name=".HomePageActivity" />
     </application>
 
 </manifest>

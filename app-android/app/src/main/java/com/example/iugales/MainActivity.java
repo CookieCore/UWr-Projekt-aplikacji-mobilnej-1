@@ -59,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
             loadPage();
         });
 
+        binding.testNav.setOnClickListener(v -> {
+            Intent intent = new Intent(this, TestNavigationActivity.class);
+            startActivity(intent);
+        });
+
         binding.debugLoginIndicator.setText("debug text");
 
     }

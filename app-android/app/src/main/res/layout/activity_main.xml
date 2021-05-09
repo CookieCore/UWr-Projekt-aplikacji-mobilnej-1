@@ -59,6 +59,13 @@
             android:layout_height="wrap_content"
             android:text="Auto"
             />
+        <Button
+            android:id="@+id/test_nav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test Nav"
+            />
+
 
     </LinearLayout>
 

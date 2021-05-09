@@ -1,58 +1,58 @@
 <resources>
     <string name="app_name">Iugales</string>
-    
+
     <!-- Our -->
-        <!-- Activity Login  -->
-        <string name="login">Login</string>
-        <string name="loginEmail">E-mail</string>
-        <string name="loginPassword">Password</string>
-        <string name="loginButton">Login</string>
-        <string name="otherLoginMethods">─── Or ───</string>
-        <string name="forgotPassword">Forgot password?</string>
-        <string name="reSendConfirmEmail">Send Email confirmation again.</string>
-        <string name="createAccount">Create new account</string>
-        <string name="logErrorEmail"            >Write valid email.</string>
-        <string name="logErrorEmailOrPassword"  >Email or password are incorrect. Try again or reset the password by clicking \"Forgot password?\" button.</string>
-        <string name="logErrorEmailNotConfirm"  >Pleas confirm your email.</string>
-        <string name="sendingEmailPassword">Sending a password reset link.</string>
-        <string name="sendingEmailConfirmEmail">Sending Email activation link.</string>
+    <!-- Activity Login  -->
+    <string name="login">Login</string>
+    <string name="loginEmail">E-mail</string>
+    <string name="loginPassword">Password</string>
+    <string name="loginButton">Login</string>
+    <string name="otherLoginMethods">─── Or ───</string>
+    <string name="forgotPassword">Forgot password?</string>
+    <string name="reSendConfirmEmail">Send Email confirmation again.</string>
+    <string name="createAccount">Create new account</string>
+    <string name="logErrorEmail">Write valid email.</string>
+    <string name="logErrorEmailOrPassword">Email or password are incorrect. Try again or reset the password by clicking \"Forgot password?\" button.</string>
+    <string name="logErrorEmailNotConfirm">Pleas confirm your email.</string>
+    <string name="sendingEmailPassword">Sending a password reset link.</string>
+    <string name="sendingEmailConfirmEmail">Sending Email activation link.</string>
 
-        <!-- Activity Verify -->
-        <string name="verify">Verification</string>
-        <string name="verifyMessage">Almost there.\n\n Before you can log in, you need to confirm your email address first.\n\n Check your email box for verification link from \"no-reply\" email address. If you can\'t find it check spam folder or click \"Resend the verification email\" button.</string>
-        <string name="verifyEmailMessage">You are trying to log in as</string>
-        <string name="verifyNoEmail">&lt;user&gt;@&lt;host.address&gt;</string>
-        <string name="verifyLogin">Try logging in again</string>
-        <string name="verifyResend">Resend the verification email</string>
+    <!-- Activity Verify -->
+    <string name="verify">Verification</string>
+    <string name="verifyMessage">Almost there.\n\n Before you can log in, you need to confirm your email address first.\n\n Check your email box for verification link from \"no-reply\" email address. If you can\'t find it check spam folder or click \"Resend the verification email\" button.</string>
+    <string name="verifyEmailMessage">You are trying to log in as</string>
+    <string name="verifyNoEmail">&lt;user&gt;@&lt;host.address&gt;</string>
+    <string name="verifyLogin">Try logging in again</string>
+    <string name="verifyResend">Resend the verification email</string>
 
-        <!-- Activity Register  -->
-        <string name="register">Register</string>
-        <string name="registerPersonalData">Personal data</string>
-        <string name="registerFirstName">First name</string>
-        <string name="registerLastName">Last name</string>
-        <string name="registerLoginData">Login data</string>
-        <string name="registerEmail">E-mail</string>
-        <string name="registerPassword">Password</string>
-        <string name="registerPasswordRules">min. 8 characters, use at least one of caps, numbers and special character</string>
-        <string name="registerManager">I\'m a project manager</string>
-        <string name="registerTermsAndConditions">I have read and agree to terms and conditions</string>
-        <string name="registerTermsAndConditionsButton">terms and conditions</string>
-        <string name="registerButton">Register</string>
-        <string name="haveAccount">I already have an account</string>
-        <string name="regErrorTermsAndConditions"  >You need to agree to our terms and conditions</string>
-        <string name="regErrorFirstName"           >Tell us your first name</string>
-        <string name="regErrorLastName"            >Tell us your last name</string>
-        <string name="regErrorPassword"            >Password need to be larger then 6 characters</string>
-        <string name="regErrorEmail"               >Write correct email</string>
-        <string name="regErrorRegister"            >Authentication failed.</string>
-        <string name="regErrorServerError"         >Unknown error, contact administrator.</string>
+    <!-- Activity Register  -->
+    <string name="register">Register</string>
+    <string name="registerPersonalData">Personal data</string>
+    <string name="registerFirstName">First name</string>
+    <string name="registerLastName">Last name</string>
+    <string name="registerLoginData">Login data</string>
+    <string name="registerEmail">E-mail</string>
+    <string name="registerPassword">Password</string>
+    <string name="registerPasswordRules">min. 8 characters, use at least one of caps, numbers and special character</string>
+    <string name="registerManager">I\'m a project manager</string>
+    <string name="registerTermsAndConditions">I have read and agree to terms and conditions</string>
+    <string name="registerTermsAndConditionsButton">terms and conditions</string>
+    <string name="registerButton">Register</string>
+    <string name="haveAccount">I already have an account</string>
+    <string name="regErrorTermsAndConditions">You need to agree to our terms and conditions</string>
+    <string name="regErrorFirstName">Tell us your first name</string>
+    <string name="regErrorLastName">Tell us your last name</string>
+    <string name="regErrorPassword">Password need to be larger then 6 characters</string>
+    <string name="regErrorEmail">Write correct email</string>
+    <string name="regErrorRegister">Authentication failed.</string>
+    <string name="regErrorServerError">Unknown error, contact administrator.</string>
 
-        <!-- Contact  -->
-        <string name="contactName">&lt;Contact.name&gt;</string>
-        <string name="contactLastMessage">&lt;Contact.lastMessage&gt;</string>
-        <string name="contactLastMessageDate">&lt;Contact.lastMessageDate&gt;</string>
+    <!-- Contact  -->
+    <string name="contactName">&lt;Contact.name&gt;</string>
+    <string name="contactLastMessage">&lt;Contact.lastMessage&gt;</string>
+    <string name="contactLastMessageDate">&lt;Contact.lastMessageDate&gt;</string>
 
-        <!-- Conversation  -->
-        <string name="textHint">Text</string>
+    <!-- Conversation  -->
+    <string name="textHint">Text</string>
 
 </resources>
