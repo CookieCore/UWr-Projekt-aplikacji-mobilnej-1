@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/test_navigation"
+    app:startDestination="@id/test_profile">
+
+    <fragment
+        android:id="@+id/test_profile"
+        android:name="com.example.iugales.test.TestProfileFragment"
+        android:label="fragment_test_profile"
+        tools:layout="@layout/fragment_test_profile" />
+    <fragment
+        android:id="@+id/test_notifications"
+        android:name="com.example.iugales.test.TestNotificationsFragment"
+        android:label="fragment_test_notifications"
+        tools:layout="@layout/fragment_test_notifications" />
+    <fragment
+        android:id="@+id/test_settings"
+        android:name="com.example.iugales.test.TestSettingsFragment"
+        android:label="fragment_test_settings"
+        tools:layout="@layout/fragment_test_settings" />
+</navigation>

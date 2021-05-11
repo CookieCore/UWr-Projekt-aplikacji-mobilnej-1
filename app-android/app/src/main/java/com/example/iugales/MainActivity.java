@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.iugales.databinding.ActivityMainBinding;
+import com.example.iugales.test.TestNavigationActivity;
 import com.example.iugales.util.Util;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
