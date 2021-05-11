@@ -1,16 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingHorizontal="20dp"
+    android:paddingTop="20dp"
+    android:background="@color/bg_0c">
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/user_image"
+        android:layout_height="100dp"
+        android:layout_width="100dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/ic_user_circle_solid"/>
 
     <TextView
+        android:id="@+id/user_welcome"
+        android:layout_toRightOf="@id/user_image"
+        android:layout_alignTop="@id/user_image"
+        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textColor="@color/txt_1c"
+        android:textSize="30sp"
+        android:text="@string/userHomeWelcoming"
+        />
+    <TextView
+        android:id="@+id/user_username"
+        android:layout_alignBottom="@id/user_image"
+        android:layout_toRightOf="@id/user_image"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/user_welcome"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textColor="@color/txt_1c"
+        android:textSize="20sp"
+        android:text="@string/userHomeUserName"
+        />
+    <ImageView
+        android:id="@+id/sep_0"
+        android:layout_marginVertical="15dp"
+        android:layout_below="@id/user_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Country roads! Take me Home! To the place, i belong, west Virginia, mountain mama"
-        android:textColor="@color/txt_2c"
-        android:textSize="40sp"
-        android:gravity="center"/>
+        android:layout_height="2dp"
+        android:src="@drawable/msg_bubble"/>
+    <TextView
+        android:id="@+id/user_skills_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sep_0"
+        android:text="@string/userHomeSkills"
+        android:textSize="20dp"
+        android:textColor="@color/txt_1c"
+        />
 
-</FrameLayout>
+    <RelativeLayout
+        android:id="@+id/user_skills_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/user_skills_textView"
+        >
+
+        <ImageView
+            android:id="@+id/user_skills_i0"
+            android:visibility="gone"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@id/user_skills_t0"
+            android:layout_alignTop="@id/user_skills_t0"
+            android:src="@drawable/ic_user_circle_solid"
+            android:layout_marginRight="20dp"
+            app:tint="@color/txt_0c" />
+        <TextView
+            android:id="@+id/user_skills_t0"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/user_skills_i0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="@color/txt_0c"
+            />
+
+
+        <ImageView
+            android:id="@+id/user_skills_i1"
+            android:visibility="gone"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@id/user_skills_t1"
+            android:layout_alignTop="@id/user_skills_t1"
+            android:src="@drawable/ic_user_circle_solid"
+            android:layout_marginRight="20dp"
+            app:tint="@color/txt_0c" />
+        <TextView
+            android:id="@+id/user_skills_t1"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/user_skills_t0"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/user_skills_i1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="@color/txt_0c"
+            />
+
+        <ImageView
+            android:id="@+id/user_skills_i2"
+            android:visibility="gone"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@id/user_skills_t2"
+            android:layout_alignTop="@id/user_skills_t2"
+            android:src="@drawable/ic_user_circle_solid"
+            android:layout_marginRight="20dp"
+            app:tint="@color/txt_0c" />
+        <TextView
+            android:id="@+id/user_skills_t2"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/user_skills_t1"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/user_skills_i2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="@color/txt_0c"
+            />
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/user_skills_more"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/user_skills_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#0000"
+
+        android:text="@string/userHomeSkillsMore"
+        android:textColor="@color/txtAccent_0c"
+        />
+
+    <ImageView
+        android:id="@+id/sep_1"
+        android:layout_marginVertical="15dp"
+        android:layout_below="@id/user_skills_more"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:src="@drawable/msg_bubble"/>
+
+</RelativeLayout>

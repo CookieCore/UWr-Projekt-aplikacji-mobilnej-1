@@ -47,6 +47,40 @@
     <string name="regErrorRegister">Authentication failed.</string>
     <string name="regErrorServerError">Unknown error, contact administrator.</string>
 
+    <!-- UserHome  -->
+    <string name="userHomeWelcoming">Welcome,</string>
+    <string name="userHomeUserName">&lt;User.name&gt;</string>
+    <string name="userHomeSkills">Your top skills:</string>
+    <string name="userHomeSkillsMore">More</string>
+
+    <!-- Skills  -->
+    <string name="skill_cpp">C++</string>
+    <string name="skill_c_sharp">C#</string>
+    <string name="skill_c">C</string>
+    <string name="skill_java">Java</string>
+    <string name="skill_python">Python</string>
+    <string name="skill_regex">RegEx</string>
+    <string name="skill_js">JavaScript</string>
+    <string name="skill_white_space">White Space</string>
+    <string name="skill_unreal">Unreal</string>
+    <string name="skill_unity">Unity</string>
+    <string name="skill_kotlin">Kotlin</string>
+    <string name="skill_sql">SQL</string>
+    <string name="skill_excel">Excel</string>
+    <string name="skill_assembly">Assembly</string>
+    <string name="skill_open_gl">OpenGL</string>
+    <string name="skill_git">Git</string>
+    <string name="skill_cmake">CMake</string>
+    <string name="skill_testing">Testing</string>
+    <string name="skill_lab_view">LabView</string>
+    <string name="skill_mat_lab">MatLab</string>
+    <string name="skill_django">Django</string>
+    <string name="skill_qt">QT</string>
+    <string name="skill_agile">Agile Programing</string>
+
+    <string name="skill_presenting">Presenting</string>
+    <string name="skill_managing">Managing</string>
+
     <!-- Contact  -->
     <string name="contactName">&lt;Contact.name&gt;</string>
     <string name="contactLastMessage">&lt;Contact.lastMessage&gt;</string>
