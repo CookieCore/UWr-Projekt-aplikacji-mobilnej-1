@@ -23,7 +23,7 @@ public class HomePageActivity extends AppCompatActivity {
 
     public ActivityUserHomePageBinding mBinding;
 /*TODO fix bug with TakeMeHome always view
-
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +51,7 @@ public class HomePageActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.fragment_container);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
-    }*/
+    }/*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,5 +62,5 @@ public class HomePageActivity extends AppCompatActivity {
 
         NavController navController = Navigation.findNavController(this, R.id.fragment_container);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
-    }
+    }*/
 }
