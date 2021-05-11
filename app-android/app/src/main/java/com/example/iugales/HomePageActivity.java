@@ -7,15 +7,22 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import com.example.iugales.databinding.ActivityUserHomePageBinding;
 import com.example.iugales.util.Util;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 public class HomePageActivity extends AppCompatActivity {
 
     public ActivityUserHomePageBinding mBinding;
+/*TODO fix bug with TakeMeHome always view
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,28 +45,22 @@ public class HomePageActivity extends AppCompatActivity {
         }
 
         // navBar
-        mBinding.navBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment selected = null;
-                switch (item.getItemId()){
-                    case R.id.navBar_userHome:
-                        selected = new HomeFragment();
-                        break;
-                    case R.id.navBar_company:
-                        selected = new CompanyFragment();
-                        break;
-                    case R.id.navBar_messages:
-                        selected = new MessagesFragment();
-                        break;
-                }
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container, selected)
-                        .commit();
 
-                return true;
-            }
-        });
+        BottomNavigationView bottomNavigationView = findViewById(R.id.navBar);
+
+        NavController navController = Navigation.findNavController(this, R.id.fragment_container);
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
+
+    }*/
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_user_home_page);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.navBar);
+
+        NavController navController = Navigation.findNavController(this, R.id.fragment_container);
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
     }
 }

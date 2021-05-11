@@ -3,21 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_navigation"
-    app:startDestination="@id/messagesFragment">
+    app:startDestination="@id/navBar_userHome">
     <fragment
-        android:id="@+id/messagesFragment"
+        android:id="@+id/navBar_userHome"
+        android:name="com.example.iugales.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/navBar_company"
+        android:name="com.example.iugales.CompanyFragment"
+        android:label="CompanyFragment"
+        tools:layout="@layout/fragment_company" />
+    <fragment
+        android:id="@+id/navBar_messages"
         android:name="com.example.iugales.MessagesFragment"
-        android:label="MessagesFragment" >
+        android:label="MessagesFragment"
+        tools:layout="@layout/fragment_messages">
         <action
-            android:id="@+id/action_messagesFragment_to_conversationFragment"
+            android:id="@+id/action_navBar_messages_to_conversationFragment"
             app:destination="@id/conversationFragment" />
     </fragment>
     <fragment
         android:id="@+id/conversationFragment"
         android:name="com.example.iugales.ConversationFragment"
-        android:label="ConversationFragment" >
+        android:label="ConversationFragment"
+        tools:layout="@layout/fragment_conversation">
         <action
-            android:id="@+id/action_conversationFragment_to_messagesFragment"
-            app:destination="@id/messagesFragment" />
+            android:id="@+id/action_conversationFragment_to_navBar_messages"
+            app:destination="@id/navBar_messages" />
     </fragment>
 </navigation>

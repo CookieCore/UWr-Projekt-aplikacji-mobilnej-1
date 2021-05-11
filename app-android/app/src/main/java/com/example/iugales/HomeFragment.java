@@ -12,11 +12,14 @@ import androidx.fragment.app.Fragment;
 import com.example.iugales.util.Util;
 
 public class HomeFragment extends Fragment {
-    @Nullable
+    public HomeFragment() {
+        // Required empty public constructor
+    }
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
-
-
     }
 }
