@@ -15,7 +15,6 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.iugales.databinding.ActivityUserHomePageBinding;
-import com.example.iugales.util.Util;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
