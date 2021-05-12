@@ -52,6 +52,13 @@
     <string name="userHomeUserName">&lt;User.name&gt;</string>
     <string name="userHomeSkills">Your top skills:</string>
     <string name="userHomeSkillsMore">More</string>
+    <string name="userHomeEvents">Events</string>
+    <string name="userHomeEventsToday">Today\'s events</string>
+    <string name="userHomeEventsNoToday">There\'s no events for today</string>
+    <string name="userHomeEventsTomorrow">Tomorrows\'s events</string>
+    <string name="userHomeEventsNoTomorrows">There\'s no events for tomorrow</string>
+    <string name="userHomeEventsLater">Later events</string>
+    <string name="userHomeEventsNoLater">There\'s no events later</string>
 
     <!-- Skills  -->
     <string name="skill_cpp">C++</string>
