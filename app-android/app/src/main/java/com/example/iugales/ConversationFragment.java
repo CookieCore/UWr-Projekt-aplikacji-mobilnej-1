@@ -36,9 +36,21 @@ public class ConversationFragment extends Fragment {
         return v;
     }
 
-   @Override
+    @Override
     public void onDestroy() {
         super.onDestroy();
+        ((HomePageActivity) getActivity()).mBinding.navBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        ((HomePageActivity) getActivity()).mBinding.navBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
         ((HomePageActivity) getActivity()).mBinding.navBar.setVisibility(View.VISIBLE);
     }
 }

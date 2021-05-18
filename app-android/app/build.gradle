@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
     id 'androidx.navigation.safeargs'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -44,6 +45,12 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.1.0'
     // Import the BoM for the Firebase platform
     implementation platform('com.google.firebase:firebase-bom:26.8.0')
+    // Declare the dependencies for the Crashlytics and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
     // Declare the dependency for the Firebase Authentication library
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-auth'
@@ -62,4 +69,6 @@ dependencies {
     //circle image view
     implementation 'com.mikhaellopez:circularimageview:4.2.0'
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    // firestore MVVM (https://medium.com/firebase-developers/android-mvvm-firestore-37c3a8d65404)
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.4.1'
 }

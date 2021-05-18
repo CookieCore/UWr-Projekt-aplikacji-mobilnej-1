@@ -118,6 +118,7 @@ public class RegisterActivity  extends AppCompatActivity {
                             newUsr.put("firstName", firstName);
                             newUsr.put("lastName", lastName);
                             newUsr.put("projectManager", projectManager);
+                            newUsr.put("mail", email);
                             db.collection("Users").document(uid).set(newUsr)
                                 .addOnCompleteListener(n -> {
                                     FirebaseUser curUsr = mAuth.getCurrentUser();
