@@ -30,7 +30,7 @@ public class TestNavigationActivity extends AppCompatActivity {
         NavigationView  navigationView = findViewById(R.id.navigationView);
         navigationView.setItemIconTintList(null);
 
-        NavController navController = Navigation.findNavController(this, R.id.navHostFragment);
+        NavController navController = Navigation.findNavController(this, R.id.fragment_container);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 }
