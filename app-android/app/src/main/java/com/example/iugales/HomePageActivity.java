@@ -26,10 +26,10 @@ public class HomePageActivity extends AppCompatActivity {
         setContentView(view);
 
         // select home from NavBar
-        getSupportFragmentManager()
+        /*getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, new HomeFragment())
-                .commit();
+                .commit();*/
 
         // Check if user is signed in (non-null) and go back or stay.
         if (!Util.isLoggedIn()) {
@@ -40,7 +40,7 @@ public class HomePageActivity extends AppCompatActivity {
 
         // navBar
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.navBar);
+        BottomNavigationView bottomNavigationView = mBinding.navBar;
 
         NavController navController = Navigation.findNavController(this, R.id.fragment_container);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);

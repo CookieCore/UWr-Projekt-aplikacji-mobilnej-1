@@ -36,7 +36,7 @@ public class ConversationFragment extends Fragment {
         return v;
     }
 
-    @Override
+   @Override
     public void onDestroy() {
         super.onDestroy();
         ((HomePageActivity) getActivity()).mBinding.navBar.setVisibility(View.VISIBLE);
