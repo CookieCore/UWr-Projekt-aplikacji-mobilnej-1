@@ -73,9 +73,7 @@
             android:layout_height="30dp"
             android:layout_alignBottom="@id/user_skills_t0"
             android:layout_alignTop="@id/user_skills_t0"
-            android:src="@drawable/ic_user_circle_solid"
-            android:layout_marginRight="20dp"
-            app:tint="@color/txt_0c" />
+            android:layout_marginRight="20dp"/>
         <TextView
             android:id="@+id/user_skills_t0"
             android:visibility="gone"
@@ -96,9 +94,7 @@
             android:layout_height="30dp"
             android:layout_alignBottom="@id/user_skills_t1"
             android:layout_alignTop="@id/user_skills_t1"
-            android:src="@drawable/ic_user_circle_solid"
-            android:layout_marginRight="20dp"
-            app:tint="@color/txt_0c" />
+            android:layout_marginRight="20dp"/>
         <TextView
             android:id="@+id/user_skills_t1"
             android:visibility="gone"
@@ -119,9 +115,7 @@
             android:layout_height="30dp"
             android:layout_alignBottom="@id/user_skills_t2"
             android:layout_alignTop="@id/user_skills_t2"
-            android:src="@drawable/ic_user_circle_solid"
-            android:layout_marginRight="20dp"
-            app:tint="@color/txt_0c" />
+            android:layout_marginRight="20dp"/>
         <TextView
             android:id="@+id/user_skills_t2"
             android:visibility="gone"

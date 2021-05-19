@@ -27,5 +27,11 @@
         <color name="loginFacebook_0c">#FF4267B2</color>
         <color name="loginTwitter_0c">#FF1DA1F2</color>
 
+        <!-- Skills -->
+        <color name="skills1_c">#6C2F2A</color>
+        <color name="skills2_c">#D1D9E8</color>
+        <color name="skills3_c">#D59A26</color>
+        <color name="skills4_c">#0EB1A2</color>
+
 
 </resources>

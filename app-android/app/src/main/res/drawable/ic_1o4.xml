@@ -8,7 +8,7 @@
       android:strokeAlpha="0.996"
       android:strokeLineJoin="round"
       android:strokeWidth="3.86968"
-      android:fillColor="@color/txt_0c"
+      android:fillColor="@color/skills1_c"
       android:strokeColor="@color/txt_0c"
       android:fillType="evenOdd"
       android:fillAlpha="0.996"
