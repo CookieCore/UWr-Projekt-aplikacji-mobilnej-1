@@ -8,12 +8,12 @@
 
     <item
         android:id="@+id/test_notifications"
-        android:icon="@drawable/ic_hotel_regular"
+        android:icon="@drawable/ic_bell_light"
         android:title="Notifications"/>
 
     <item
         android:id="@+id/test_settings"
-        android:icon="@drawable/ic_comment_lines_regular"
+        android:icon="@drawable/ic_cog_light"
         android:title="Settings"/>
 
 </menu>

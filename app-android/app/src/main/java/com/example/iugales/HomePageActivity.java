@@ -2,14 +2,14 @@ package com.example.iugales;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
+import androidx.fragment.app.Fragment;
 
 import com.example.iugales.databinding.ActivityUserHomePageBinding;
 import com.example.iugales.util.Util;
@@ -18,8 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class HomePageActivity extends AppCompatActivity {
 
     public ActivityUserHomePageBinding mBinding;
-/*TODO fix bug with TakeMeHome always view
-*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,10 +27,10 @@ public class HomePageActivity extends AppCompatActivity {
         setContentView(view);
 
         // select home from NavBar
-        /*getSupportFragmentManager()
+        getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, new HomeFragment())
-                .commit();*/
+                .commit();
 
         // Check if user is signed in (non-null) and go back or stay.
         if (!Util.isLoggedIn()) {
@@ -39,6 +38,7 @@ public class HomePageActivity extends AppCompatActivity {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
+
         DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
         findViewById(R.id.imageMenu).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,23 +46,30 @@ public class HomePageActivity extends AppCompatActivity {
                 drawerLayout.openDrawer(GravityCompat.START);
             }
         });
+
         // navBar
+        mBinding.navBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment selected = null;
+                switch (item.getItemId()){
+                    case R.id.navBar_userHome:
+                        selected = new HomeFragment();
+                        break;
+                    case R.id.navBar_company:
+                        selected = new CompanyFragment();
+                        break;
+                    case R.id.navBar_messages:
+                        selected = new MessagesFragment();
+                        break;
+                }
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, selected)
+                        .commit();
 
-        BottomNavigationView bottomNavigationView = mBinding.navBar;
-
-        NavController navController = Navigation.findNavController(this, R.id.fragment_container);
-        NavigationUI.setupWithNavController(bottomNavigationView, navController);
-
-    }/*/
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_home_page);
-
-        BottomNavigationView bottomNavigationView = findViewById(R.id.navBar);
-
-        NavController navController = Navigation.findNavController(this, R.id.fragment_container);
-        NavigationUI.setupWithNavController(bottomNavigationView, navController);
-    }*/
+                return true;
+            }
+        });
+    }
 }

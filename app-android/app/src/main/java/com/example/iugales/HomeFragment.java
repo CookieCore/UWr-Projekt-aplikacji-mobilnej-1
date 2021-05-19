@@ -96,21 +96,25 @@ public class HomeFragment extends Fragment {
                         }
                         Iterator<Map.Entry<String, Long>> myIterator = skills.entrySet().iterator();
                         Map.Entry<String, Long> skill = myIterator.next();
-                        mBinding.userSkillsT0.setText(skill.getKey() + ": " + skill.getValue() + "/4");
+                        mBinding.userSkillsT0.setText(skill.getKey());
+                        mBinding.userSkillsI0.setImageResource(switchImage(skill.getValue()));
                         skill = myIterator.next();
-                        mBinding.userSkillsT1.setText(skill.getKey() + ": " + skill.getValue() + "/4");
+                        mBinding.userSkillsT1.setText(skill.getKey());
+                        mBinding.userSkillsI1.setImageResource(switchImage(skill.getValue()));
                         skill = myIterator.next();
-                        mBinding.userSkillsT2.setText(skill.getKey() + ": " + skill.getValue() + "/4");
+                        mBinding.userSkillsT2.setText(skill.getKey());
+                        mBinding.userSkillsI2.setImageResource(switchImage(skill.getValue()));
+
+                        mBinding.userSkillsI0.setVisibility(View.VISIBLE);
+                        mBinding.userSkillsT1.setVisibility(View.VISIBLE);
+                        mBinding.userSkillsT0.setVisibility(View.VISIBLE);
+                        mBinding.userSkillsI1.setVisibility(View.VISIBLE);
+                        mBinding.userSkillsT2.setVisibility(View.VISIBLE);
+                        mBinding.userSkillsI2.setVisibility(View.VISIBLE);
                     }
                 }
             }
         });
-        mBinding.userSkillsT0.setVisibility(View.VISIBLE);
-        mBinding.userSkillsI0.setVisibility(View.VISIBLE);
-        mBinding.userSkillsT1.setVisibility(View.VISIBLE);
-        mBinding.userSkillsI1.setVisibility(View.VISIBLE);
-        mBinding.userSkillsT2.setVisibility(View.VISIBLE);
-        mBinding.userSkillsI2.setVisibility(View.VISIBLE);
 
         String namesToday[] = {"today 1","today 2"};
         String datesToday[] = {"d1","d2"};
@@ -146,6 +150,23 @@ public class HomeFragment extends Fragment {
         }
 
         return v;
+    }
+
+    int switchImage(long level){
+        int id = 0;
+        if(level == 1){
+            id = R.drawable.ic_1o4;
+        }
+        else if(level == 2){
+            id = R.drawable.ic_2o4;
+        }
+        else if(level == 3){
+            id = R.drawable.ic_3o4;
+        }
+        else if(level == 4){
+            id = R.drawable.ic_4o4;
+        }
+        return id;
     }
 
     class CalendarAdapter extends BaseAdapter {

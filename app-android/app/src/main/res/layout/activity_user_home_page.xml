@@ -49,8 +49,7 @@
                 android:id="@+id/fragment_container"
                 android:layout_above="@id/navBar"
                 android:name="androidx.navigation.fragment.NavHostFragment"
-                app:defaultNavHost="true"
-                app:navGraph="@navigation/app_navigation"/>
+                app:defaultNavHost="true"/>
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/navBar"
