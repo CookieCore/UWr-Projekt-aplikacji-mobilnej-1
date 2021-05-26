@@ -5,10 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.example.iugales.databinding.FragmentCompanyBinding;
 
 public class CompanyFragment extends Fragment {
+    private FragmentCompanyBinding mBinding;
+    private ProjectsAdapter mAdapter;
 
     public CompanyFragment() {
         // Required empty public constructor
@@ -17,7 +21,12 @@ public class CompanyFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_company, container, false);
+        mBinding = FragmentCompanyBinding.inflate(getLayoutInflater());
+        View v = mBinding.getRoot();
+
+        mBinding.companyRv.setLayoutManager( new LinearLayoutManager(getActivity()));
+        mAdapter = new ProjectsAdapter(this);
+        mBinding.companyRv.setAdapter(mAdapter);
+        return v;
     }
 }

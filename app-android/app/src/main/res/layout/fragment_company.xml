@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
-
-    <TextView
+    android:paddingHorizontal="20dp"
+    tools:context=".HomeFragment"
+    android:background="@color/bg_0c">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/company_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="your company will be here"
-        android:textColor="@color/txt_2c"
-        android:textSize="40sp"
-        android:gravity="center"/>
+        />
+
 
 
 </FrameLayout>

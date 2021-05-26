@@ -88,6 +88,14 @@
     <string name="skill_presenting">Presenting</string>
     <string name="skill_managing">Managing</string>
 
+    <!-- Company -->
+    <string name="company_projectName">&lt;Project.name&gt;</string>
+    <string name="company_projectDescription">&lt;Project.description&gt;</string>
+    <string name="company_projectRequirements">&lt;Project.requirements&gt;</string>
+    <string name="company_projectPeople">&lt;Project.people&gt;</string>
+    <string name="company_projectJoin">Join</string>
+    <string name="company_projectLeave">Leave</string>
+
     <!-- Contact  -->
     <string name="contactName">&lt;Contact.name&gt;</string>
     <string name="contactLastMessage">&lt;Contact.lastMessage&gt;</string>
