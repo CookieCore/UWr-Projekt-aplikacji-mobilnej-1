@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="350dp"
+    android:layout_height="300dp"
+    android:layout_gravity="center"
+    android:background="@drawable/msg_bubble"
+    android:backgroundTint="@color/bg_1c"
+    android:padding="20dp">
+
+
+    <TextView
+        android:id="@+id/skill_title_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/txt_1c"
+        android:text="@string/skillsPopOut_nameTitle"/>
+    <EditText
+        android:id="@+id/skill_name_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/skill_title_name"
+        android:textColor="@color/txt_0c"
+        android:textColorHint="@color/txt_2c"
+        android:backgroundTint="@color/txt_0c"
+        android:hint="@string/skillsPopOut_hitName"
+        android:lines="1"
+        android:singleLine="true"/>
+
+    <TextView
+        android:id="@+id/skill_title_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/skill_name_edit"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/txt_1c"
+        android:text="@string/skillsPopOut_levelTitle"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/skill_title_level"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true">
+
+        <ImageButton
+            android:id="@+id/_level_btn_1o4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_1o4"
+            android:background="#0000"
+            android:tint="@color/skillsEmpty_c"
+            android:scaleType="fitCenter"/>
+
+        <ImageButton
+            android:id="@+id/_level_btn_2o4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_2o4"
+            android:background="#0000"
+            android:tint="@color/skillsEmpty_c"
+            android:scaleType="fitCenter"/>
+
+        <ImageButton
+            android:id="@+id/_level_btn_3o4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_3o4"
+            android:background="#0000"
+            android:tint="@color/skillsEmpty_c"
+            android:scaleType="fitCenter"/>
+
+        <ImageButton
+            android:id="@+id/_level_btn_4o4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_4o4"
+            android:background="#0000"
+            android:tint="@color/skillsEmpty_c"
+            android:scaleType="fitCenter"/>
+
+    </LinearLayout>
+
+
+        <Button
+            android:id="@+id/skill_cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_toLeftOf="@id/options_sep0"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:text="@string/skillsPopOut_cancel"
+            android:textColor="@color/txt_0c"
+            android:background="#0000"/>
+        <ImageView
+            android:id="@+id/options_sep0"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_alignTop="@id/skill_cancel_button"
+            android:src="@drawable/msg_bubble"
+            android:scaleType="fitCenter"
+            app:tint="@color/txt_0c" />
+        <Button
+            android:id="@+id/skill_save_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/options_sep0"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="30dp"
+            android:text="@string/skillsPopOut_save"
+            android:textColor="@color/txt_0c"
+            android:background="#0000"/>
+</RelativeLayout>

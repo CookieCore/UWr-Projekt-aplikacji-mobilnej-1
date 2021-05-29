@@ -88,6 +88,16 @@
     <string name="skill_presenting">Presenting</string>
     <string name="skill_managing">Managing</string>
 
+    <!-- Skills Pop out -->
+    <string name="skillsPopOut_save">save</string>
+    <string name="skillsPopOut_remove">remove</string>
+    <string name="skillsPopOut_cancel">cancel</string>
+    <string name="skillsPopOut_hitName">Skill</string>
+    <string name="skillsPopOut_nameTitle">What\' your skill?</string>
+    <string name="skillsPopOut_levelTitle">How well you know it?</string>
+    <string name="skillsPopOut_aboutRemove">You\'re about to remove your skill</string>
+    <string name="skillsPopOut_areYouSure">Are you sure you want to continue?</string>
+
     <!-- Company -->
     <string name="company_projectName">&lt;Project.name&gt;</string>
     <string name="company_projectDescription">&lt;Project.description&gt;</string>

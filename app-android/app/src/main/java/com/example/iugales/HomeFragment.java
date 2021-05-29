@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.iugales.databinding.FragmentHomeBinding;
@@ -47,6 +48,17 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         mBinding = FragmentHomeBinding.inflate(getLayoutInflater());
         View v = mBinding.getRoot();
+
+        mBinding.userSkillsMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppCompatActivity activity = (AppCompatActivity) getContext();
+                SkillsFragment fragment = new SkillsFragment();
+                Bundle bundle = new Bundle();
+                fragment.setArguments(bundle);
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
+            }
+        });
 
         // firebase data
         mAuth = FirebaseAuth.getInstance();
@@ -152,7 +164,7 @@ public class HomeFragment extends Fragment {
         return v;
     }
 
-    int switchImage(long level){
+    static int switchImage(long level){
         int id = 0;
         if(level == 1){
             id = R.drawable.ic_1o4;
