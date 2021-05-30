@@ -7,11 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.collection.ArrayMap;
 import androidx.fragment.app.Fragment;
 
 import com.example.iugales.databinding.FragmentHomeBinding;
@@ -23,8 +25,11 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -88,41 +93,44 @@ public class HomeFragment extends Fragment {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        Map<String, Long> skills;
-                        skills = (Map<String, Long>) document.getData().get("Skills");
+                        Map<String, Long> skills = null;
+                        // try download skills
+                        try {
+                            skills = (Map<String, Long>) document.getData().get("Skills");
+                            Log.d(TAG, "onComplete: " + skills);
+                            // sort map in reverse
+                            skills = skills.entrySet()
+                                    .stream()
+                                    .sorted((Map.Entry.<String, Long>comparingByValue().reversed()))
+                                    .collect(
+                                            Collectors.toMap(
+                                                    Map.Entry::getKey,
+                                                    Map.Entry::getValue,
+                                                    (e1, e2) -> e1, LinkedHashMap::new
+                                            )
+                                    );
+                        } catch (Exception e) {};
+                        if (skills == null) skills = new ArrayMap<>();
                         Log.d(TAG, "onComplete: " + skills);
-                        // sort map in reverse
-                        skills = skills.entrySet()
-                                .stream()
-                                .sorted((Map.Entry.<String, Long>comparingByValue().reversed()))
-                                .collect(
-                                        Collectors.toMap(
-                                                Map.Entry::getKey,
-                                                Map.Entry::getValue,
-                                                (e1, e2) -> e1, LinkedHashMap::new
-                                        )
-                                );
-                        Log.d(TAG, "onComplete: " + skills);
-                        while (skills.size() < 3) {
-                            skills.put("Null", 0l);
-                        }
-                        Iterator<Map.Entry<String, Long>> myIterator = skills.entrySet().iterator();
-                        Map.Entry<String, Long> skill = myIterator.next();
-                        mBinding.userSkillsT0.setText(skill.getKey());
-                        mBinding.userSkillsI0.setImageResource(switchImage(skill.getValue()));
-                        skill = myIterator.next();
-                        mBinding.userSkillsT1.setText(skill.getKey());
-                        mBinding.userSkillsI1.setImageResource(switchImage(skill.getValue()));
-                        skill = myIterator.next();
-                        mBinding.userSkillsT2.setText(skill.getKey());
-                        mBinding.userSkillsI2.setImageResource(switchImage(skill.getValue()));
+                        ArrayList<TextView> skills3T = new ArrayList<TextView>();
+                        skills3T.add(mBinding.userSkillsT0);
+                        skills3T.add(mBinding.userSkillsT1);
+                        skills3T.add(mBinding.userSkillsT2);
+                        ArrayList<ImageView> skills3I = new ArrayList<ImageView>();
+                        skills3I.add(mBinding.userSkillsI0);
+                        skills3I.add(mBinding.userSkillsI1);
+                        skills3I.add(mBinding.userSkillsI2);
 
-                        mBinding.userSkillsI0.setVisibility(View.VISIBLE);
-                        mBinding.userSkillsT1.setVisibility(View.VISIBLE);
-                        mBinding.userSkillsT0.setVisibility(View.VISIBLE);
-                        mBinding.userSkillsI1.setVisibility(View.VISIBLE);
-                        mBinding.userSkillsT2.setVisibility(View.VISIBLE);
-                        mBinding.userSkillsI2.setVisibility(View.VISIBLE);
+                        int skillsToShowCount = Math.min(3, skills.size());
+                        Iterator<Map.Entry<String, Long>> myIterator = skills.entrySet().iterator();
+                        Map.Entry<String, Long> skill;
+                        for (int i = 0; i < skillsToShowCount; i++) {
+                            skill = myIterator.next();
+                            skills3T.get(i).setText(skill.getKey());
+                            skills3I.get(i).setImageResource(switchImage(skill.getValue()));
+                            skills3T.get(i).setVisibility(View.VISIBLE);
+                            skills3I.get(i).setVisibility(View.VISIBLE);
+                        }
                     }
                 }
             }
