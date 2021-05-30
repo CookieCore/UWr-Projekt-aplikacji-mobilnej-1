@@ -44,7 +44,7 @@ public class SkillsFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                // add skill
+                // TODO add new skill and update
                 SkillPopOut pop = new SkillPopOut( "nowe stworzone id" , getContext());
 
             }

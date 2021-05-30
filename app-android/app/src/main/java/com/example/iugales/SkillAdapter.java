@@ -33,12 +33,14 @@ public class SkillAdapter extends RecyclerView.Adapter<SkillAdapter.ViewHolder> 
         holder.edit_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // TODO send id and update view holder with new data
                 SkillsFragment.SkillPopOut pop = new SkillsFragment.SkillPopOut( "twoje id tutaj", mParent.getContext() );
             }
         });
         holder.delete_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // TODO somehow update list after delete
                 SkillsFragment.SkillRemovePopOut pop = new SkillsFragment.SkillRemovePopOut( "twoje id tutaj", mParent.getContext() );
             }
         });
