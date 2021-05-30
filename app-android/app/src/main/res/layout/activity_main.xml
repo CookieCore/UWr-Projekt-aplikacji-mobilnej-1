@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_0c"
     tools:context=".MainActivity">
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,6 +18,7 @@
             android:textSize="15sp"
             android:gravity="center"
             android:layout_marginHorizontal="30dp"
+            android:textColor="@color/txt_0c"
             android:text="These buttons are for debug purposes, before app recognizes automatically were to go next "
             />
 
@@ -51,6 +53,7 @@
             android:textSize="15sp"
             android:gravity="center"
             android:layout_marginHorizontal="30dp"
+            android:textColor="@color/txt_0c"
             android:text="here you can put text to se user login state"
             />
         <Button
