@@ -1,6 +1,7 @@
 package com.example.iugales;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,8 +22,20 @@ import java.util.Date;
 public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHolder>  {
     ConversationFragment mParent;
     private ArrayList<ChatBubble> chatBubbles = new ArrayList<ChatBubble>();
+
+    private String TAG = "MessagesAdapter";
+
     public MessagesAdapter(ConversationFragment parent) {
         mParent = parent;
+        Log.d(TAG, "chatBubbles: " + chatBubbles);
+        chatBubbles.add(new ChatBubble("myId0", "txt 0", "dziś", "Ja"));
+        chatBubbles.add(new ChatBubble("myId1", "txt 1", "wcozraj", "On"));
+        chatBubbles.add(new ChatBubble("myId2", "txt 2", "jutor", "Ja"));
+        chatBubbles.add(new ChatBubble("myId3", "txt 3", "kiedyś", "On"));
+        chatBubbles.add(new ChatBubble("myId4", "txt 4", "ala", "On"));
+        chatBubbles.add(new ChatBubble("myId5", "txt 5", "ma", "Ja"));
+        chatBubbles.add(new ChatBubble("myId6", "txt 6", "kota", "Ja"));
+        Log.d(TAG, "chatBubbles: " + chatBubbles);
     }
 
     @NonNull
@@ -35,43 +48,42 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
+        holder.content.setText(chatBubbles.get(position).getMsgText());
+        switch (chatBubbles.get(position).getMsgSenderName()) {
+            case "me":
+            case "Me":
+            case "ME":
+                setAsMe(holder); //! SAVE ASS MEEEEE
+                break;
+        }
         switch (position){
             case 6:
                 holder.date.setVisibility(View.VISIBLE);
                 holder.date.setText(new Date().toString());
-                holder.content.setText("Hello");
                 break;
             case 5:
                 holder.imageView.setVisibility(View.VISIBLE);
                 holder.imageView.setImageResource(R.drawable.ic_ico_v2);
-                holder.content.setText("how are you?");
                 break;
             case 4:
-                setAsMe(holder); //! SAVE ASS MEEEEE
                 holder.imageView.setVisibility(View.VISIBLE);
-                holder.content.setText("im five, i just got from work, and im very tired, how about you? i've heard you got a puppy");
                 break;
             case 3:
                 holder.imageView.setVisibility(View.VISIBLE);
                 holder.imageView.setImageResource(R.drawable.ic_ico_v2);
-                holder.content.setText("yeah it's a golden retriever");
                 break;
             case 2:
-                setAsMe(holder);
                 holder.imageView.setVisibility(View.VISIBLE);
-                holder.content.setText("so cute");
                 break;
             case 1:
                 holder.imageView.setVisibility(View.VISIBLE);
                 holder.imageView.setImageResource(R.drawable.ic_ico_v2);
-                holder.content.setText("i know.");
                 break;
             case 0:
                 holder.date.setVisibility(View.VISIBLE);
                 holder.date.setText(new Date().toString());
                 holder.imageView.setVisibility(View.VISIBLE);
                 holder.imageView.setImageResource(R.drawable.ic_ico_v2);
-                holder.content.setText("he just pooped");
                 break;
         }
 
@@ -84,7 +96,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return 7;
+        return chatBubbles.size();
     }
 
     @SuppressLint("ResourceAsColor")
