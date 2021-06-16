@@ -49,6 +49,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         holder.content.setText(chatBubbles.get(position).getMsgText());
+        holder.date.setText(chatBubbles.get(position).getMsgDate().toString()); // do not delete .toString(), as getMsgDate culd return object date in the future
         switch (chatBubbles.get(position).getMsgSenderName()) {
             case "me":
             case "Me":
@@ -69,7 +70,6 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
                 holder.imageView.setVisibility(View.VISIBLE);
                 break;
             case 3:
-                holder.imageView.setVisibility(View.VISIBLE);
                 holder.imageView.setImageResource(R.drawable.ic_ico_v2);
                 break;
             case 2:
@@ -81,7 +81,6 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
                 break;
             case 0:
                 holder.date.setVisibility(View.VISIBLE);
-                holder.date.setText(new Date().toString());
                 holder.imageView.setVisibility(View.VISIBLE);
                 holder.imageView.setImageResource(R.drawable.ic_ico_v2);
                 break;
