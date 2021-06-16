@@ -55,7 +55,6 @@ public class HomePageActivity extends AppCompatActivity {
     {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment selected = null;
             switch (item.getItemId()){
                 case R.id.test_notifications:
                     break;
@@ -63,14 +62,11 @@ public class HomePageActivity extends AppCompatActivity {
                     break;
                 case R.id.test_logout:
                     mAuth.signOut();
+                    logOUT();
                     //Intent intent = new Intent(this, LoginActivity.class);
                   //  startActivity(intent);
                     break;
             }
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .commit();
-
             return true;
         }
     });
@@ -101,5 +97,10 @@ public class HomePageActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    private void logOUT() {
+      Intent intent = new Intent(this, LoginActivity.class);
+      startActivity(intent);
     }
 }
