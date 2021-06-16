@@ -57,20 +57,18 @@ public class HomePageActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment selected = null;
             switch (item.getItemId()){
-                case R.id.test_profile:
-                    break;
                 case R.id.test_notifications:
                     break;
                 case R.id.test_settings:
                     break;
                 case R.id.test_logout:
                     mAuth.signOut();
-                    selected = new MessagesFragment();
+                    //Intent intent = new Intent(this, LoginActivity.class);
+                  //  startActivity(intent);
                     break;
             }
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragment_container, selected)
                     .commit();
 
             return true;
