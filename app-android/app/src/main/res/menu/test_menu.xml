@@ -15,6 +15,11 @@
         android:id="@+id/test_settings"
         android:icon="@drawable/ic_cog_light"
         android:title="Settings"/>
+    <item
+        android:id="@+id/test_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Logout"/>
+
 
 </menu>
 
