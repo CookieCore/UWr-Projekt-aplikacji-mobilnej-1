@@ -62,9 +62,8 @@ public class HomePageActivity extends AppCompatActivity {
                     break;
                 case R.id.test_logout:
                     mAuth.signOut();
-                    logOUT();
-                    //Intent intent = new Intent(this, LoginActivity.class);
-                  //  startActivity(intent);
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                     startActivity(intent);
                     break;
             }
             return true;
@@ -99,8 +98,4 @@ public class HomePageActivity extends AppCompatActivity {
         });
     }
 
-    private void logOUT() {
-      Intent intent = new Intent(this, LoginActivity.class);
-      startActivity(intent);
-    }
 }
