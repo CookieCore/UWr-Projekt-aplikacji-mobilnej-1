@@ -28,13 +28,13 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
     public MessagesAdapter(ConversationFragment parent) {
         mParent = parent;
         Log.d(TAG, "chatBubbles: " + chatBubbles);
-        chatBubbles.add(new ChatBubble("myId0", "txt 0", "21.37.2021", "me"));
-        chatBubbles.add(new ChatBubble("myId1", "txt 1", "wcozraj", "On"));
-        chatBubbles.add(new ChatBubble("myId2", "txt 2", "jutor", "me"));
-        chatBubbles.add(new ChatBubble("myId3", "txt 3", "kiedyś", "On"));
-        chatBubbles.add(new ChatBubble("myId4", "txt 4", "ala", "On"));
-        chatBubbles.add(new ChatBubble("myId5", "txt 5", "ma", "me"));
-        chatBubbles.add(new ChatBubble("myId6", "txt 6", "kota", "me"));
+        chatBubbles.add(new ChatBubble("myId0", "txt 0", "21.37.2021", "me", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", true));
+        chatBubbles.add(new ChatBubble("myId1", "txt 1", "wcozraj", "On", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", false));
+        chatBubbles.add(new ChatBubble("myId2", "txt 2", "jutor", "me", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", true));
+        chatBubbles.add(new ChatBubble("myId3", "txt 3", "kiedyś", "On", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", false));
+        chatBubbles.add(new ChatBubble("myId4", "txt 4", "ala", "On", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", false));
+        chatBubbles.add(new ChatBubble("myId5", "txt 5", "ma", "me", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", true));
+        chatBubbles.add(new ChatBubble("myId6", "txt 6", "kota", "me", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", true));
         Log.d(TAG, "chatBubbles: " + chatBubbles);
     }
 
