@@ -28,13 +28,13 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
     public MessagesAdapter(ConversationFragment parent) {
         mParent = parent;
         Log.d(TAG, "chatBubbles: " + chatBubbles);
-        chatBubbles.add(new ChatBubble("myId0", "txt 0", "dziś", "Ja"));
+        chatBubbles.add(new ChatBubble("myId0", "txt 0", "21.37.2021", "me"));
         chatBubbles.add(new ChatBubble("myId1", "txt 1", "wcozraj", "On"));
-        chatBubbles.add(new ChatBubble("myId2", "txt 2", "jutor", "Ja"));
+        chatBubbles.add(new ChatBubble("myId2", "txt 2", "jutor", "me"));
         chatBubbles.add(new ChatBubble("myId3", "txt 3", "kiedyś", "On"));
         chatBubbles.add(new ChatBubble("myId4", "txt 4", "ala", "On"));
-        chatBubbles.add(new ChatBubble("myId5", "txt 5", "ma", "Ja"));
-        chatBubbles.add(new ChatBubble("myId6", "txt 6", "kota", "Ja"));
+        chatBubbles.add(new ChatBubble("myId5", "txt 5", "ma", "me"));
+        chatBubbles.add(new ChatBubble("myId6", "txt 6", "kota", "me"));
         Log.d(TAG, "chatBubbles: " + chatBubbles);
     }
 
@@ -44,6 +44,16 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
         View view = LayoutInflater.from(mParent.getContext()).inflate(R.layout.layout_message_bubble, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
+    }
+
+    public ChatBubble getChatBubbleWhereIndex(int index) {
+        return this.chatBubbles.get(index);
+    }
+
+    public void updateList(ArrayList<ChatBubble> newList) {
+        chatBubbles.clear();
+        chatBubbles.addAll(newList);
+        notifyDataSetChanged();
     }
 
     @Override
@@ -126,4 +136,3 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
         }
     }
 }
-
