@@ -1,6 +1,7 @@
 package com.example.iugales.model;
 
 public class ChatListItem {
+    // TODO: 6/16/21 zmienić na privat i sprawidzć czy się nie zjebało
     public String chatId;
     public String lastMsgText;
     public String lastMsgDate;

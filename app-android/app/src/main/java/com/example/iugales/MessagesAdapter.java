@@ -11,12 +11,16 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.iugales.model.ChatBubble;
+import com.example.iugales.model.ChatListItem;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHolder>  {
     ConversationFragment mParent;
+    private ArrayList<ChatBubble> chatBubbles = new ArrayList<ChatBubble>();
     public MessagesAdapter(ConversationFragment parent) {
         mParent = parent;
     }
@@ -43,7 +47,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
                 holder.content.setText("how are you?");
                 break;
             case 4:
-                setAsMe(holder);
+                setAsMe(holder); //! SAVE ASS MEEEEE
                 holder.imageView.setVisibility(View.VISIBLE);
                 holder.content.setText("im five, i just got from work, and im very tired, how about you? i've heard you got a puppy");
                 break;
