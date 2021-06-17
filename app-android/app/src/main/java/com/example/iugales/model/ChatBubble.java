@@ -26,6 +26,11 @@ public class ChatBubble {
     public Date getMsgDate() { return this.msgDate; }
     public String getMsgSenderName() { return this.msgSenderName; }
     public String getPicUrl() { return this.picUrl; }
+    public boolean IsMe() { return this.isMe; }
+
+    public void setName(String name) { this.msgSenderName = name; }
+    public void setAvatar(String url) { this.picUrl = url; }
+    public void setIsMe(Boolean isMe) { this.isMe = isMe; }
 
     @Override
     public String toString() {

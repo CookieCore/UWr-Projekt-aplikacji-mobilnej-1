@@ -1,6 +1,7 @@
 package com.example.iugales;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -80,18 +82,54 @@ public class ConversationFragment extends Fragment {
                             Map<String, Object> myData = document.getData();
 
                             Timestamp msgTime = (Timestamp) myData.get("DateSend");
+                            DocumentReference msgUser = (DocumentReference) myData.get("Sender");
 
+                            // id, text, date
                             chatBubbles.add(new ChatBubble(
                                     document.getId(),
                                     myData.get("value").toString(),
                                     msgTime.toDate(),
-                                    "Jahwe",
+                                    "gff",
                                     "/404.jpeg",
-                                    true
+                                    false
                             ));
-                            
+
                             mAdapter.updateList(chatBubbles);
                             mAdapter.notifyDataSetChanged();
+
+                            // user name, avatar;
+                            Log.d(TAG, "msgUser: " + msgUser);
+                            msgUser.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                    DocumentSnapshot userTask = task.getResult();
+                                    Map<String, Object> userData = userTask.getData();
+                                    Log.d(TAG, "userData: " + userData);
+
+                                    String usrID = "";
+                                    String name = "";
+                                    String avatar = "";
+                                    Boolean isMe = false;
+
+                                    usrID = userTask.getId();
+                                    if (usrID.equals(curUsr.getUid()))
+                                        isMe = true;
+
+                                    name = userData.get("firstName") + " " + userData.get("firstName");
+
+                                    try {
+                                        avatar = userData.get("avatar").toString();
+                                    } catch (Exception e) { }
+
+                                    ChatBubble tmpChatBubble = mAdapter.getChatBubbleWhereId(document.getId());
+                                    tmpChatBubble.setName(name);
+                                    tmpChatBubble.setAvatar(avatar);
+                                    tmpChatBubble.setIsMe(isMe);
+                                    mAdapter.updaterListById(document.getId(), tmpChatBubble);
+                                    mAdapter.updateList(chatBubbles);
+                                    mAdapter.notifyDataSetChanged();
+                                }
+                            });
                         }
                     }
                 });

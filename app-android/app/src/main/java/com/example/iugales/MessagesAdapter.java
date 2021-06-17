@@ -57,16 +57,33 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
         notifyDataSetChanged();
     }
 
+    public ChatBubble getChatBubbleWhereId(String id) {
+        for (int i = 0; i < chatBubbles.size(); i++) {
+            Log.d(TAG, "chatBubbles.get(" + i + "): " + chatBubbles.get(i));
+            if (chatBubbles.get(i).getBubbleId().equals(id)) {
+                return chatBubbles.get(i);
+            }
+        }
+        return null;
+    }
+
+    public void updaterListById(String id, ChatBubble chatBubble) {
+        for (int i = 0; i < chatBubbles.size(); i++) {
+            if (chatBubbles.get(i).getBubbleId() == id) {
+                chatBubbles.set(i, chatBubble);
+                break;
+            }
+        }
+    }
+
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         holder.content.setText(chatBubbles.get(position).getMsgText());
         holder.date.setText(chatBubbles.get(position).getMsgDate().toString()); // do not delete .toString(), as getMsgDate culd return object date in the future
-        switch (chatBubbles.get(position).getMsgSenderName()) {
-            case "me":
-            case "Me":
-            case "ME":
-                setAsMe(holder); //! SAVE ASS MEEEEE
-                break;
+        Log.d(TAG, "IsMe: " + chatBubbles.get(position).IsMe());
+        if (chatBubbles.get(position).IsMe()) {
+            Log.d(TAG, "saved as meee");
+            setAsMe(holder);
         }
         switch (position){
             case 6:
