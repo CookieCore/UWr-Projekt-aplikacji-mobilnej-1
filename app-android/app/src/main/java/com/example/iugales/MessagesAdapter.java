@@ -1,6 +1,8 @@
 package com.example.iugales;
 
 import android.annotation.SuppressLint;
+import android.os.Build;
+import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +20,7 @@ import com.example.iugales.model.ChatListItem;
 import com.google.type.DateTime;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -78,20 +82,39 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
+        int sizeChat = chatBubbles.size();
         holder.content.setText(chatBubbles.get(position).getMsgText());
         holder.date.setText(chatBubbles.get(position).getMsgDate().toString()); // do not delete .toString(), as getMsgDate culd return object date in the future
         Log.d(TAG, "IsMe: " + chatBubbles.get(position).getIsMe());
+
+
+        Date date = Calendar.getInstance().getTime();
+        //Log.d(TAG, "dupaki" + chatBubbles.get(position).getMsgDate().getTime());
+        //Log.d(TAG, "sraki" + date.getTime());
+        if(DateUtils.isToday(chatBubbles.get(position).getMsgDate().getTime()) == DateUtils.isToday(date.getTime()))
+        {
+
+            //Log.d(TAG, "sraki" + DateUtils.getRelativeDateTimeString(chatBubbles.get(position).getMsgDate().getTime()));
+            if(position-1 == -1)
+            {
+                int dupa =0;
+            }
+            else if(chatBubbles.get(position).getMsgDate().getTime() - chatBubbles.get(position-1).getMsgDate().getTime() > 1800000)
+            {
+                Log.d(TAG, "dupaki");
+                holder.date.setVisibility(View.VISIBLE);
+            }
+            //Log.d(TAG, "dupaki");
+        }
+        //else if(DateUtils)
+
+
         if (chatBubbles.get(position).getIsMe()) {
             Log.d(TAG, "saved as meee");
             setAsMe(holder);
-        }
-
-        Date date = Calendar.getInstance().getTime();
-        if(chatBubbles.get(position).getMsgDate() == date)
-        {
-            
         }
 
         //if(chatBubbles.)
