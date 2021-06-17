@@ -102,12 +102,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
         if(DateUtils.isToday(chatBubbles.get(position).getMsgDate().getTime()) == DateUtils.isToday(date.getTime()))
         {
             Log.d(TAG, "dzisiaj: "+ position);
-
-            if(position+1 > chatBubbles.size())
-            {
-                int dupa =0;
-            }
-            else if(chatBubbles.get(position).getMsgDate().getTime() - chatBubbles.get(position+1).getMsgDate().getTime() > 1800000)
+            if(position+1 > chatBubbles.size() || chatBubbles.get(position).getMsgDate().getTime() - chatBubbles.get(position+1).getMsgDate().getTime() > 1800000)
             {
                 holder.date.setVisibility(View.VISIBLE);
             }
@@ -117,11 +112,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
         else if(calendar.get(Calendar.DAY_OF_YEAR) == cal.get(Calendar.DAY_OF_YEAR)-1)
         {
             Log.d(TAG, "wczoraj poz "+position );
-            if(position+1 > chatBubbles.size()-1)
-            {
-                int dupa =0;
-            }
-            else if(chatBubbles.get(position).getMsgDate().getTime() - chatBubbles.get(position+1).getMsgDate().getTime() > 1800000)
+            if(position+1 > chatBubbles.size()-1 || chatBubbles.get(position).getMsgDate().getTime() - chatBubbles.get(position+1).getMsgDate().getTime() > 1800000)
             {
                 Log.d(TAG, "wczorajo");
                 holder.date.setVisibility(View.VISIBLE);
