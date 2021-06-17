@@ -15,6 +15,7 @@ import com.example.iugales.model.ChatBubble;
 import com.example.iugales.model.ChatListItem;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -68,27 +69,32 @@ public class ConversationFragment extends Fragment {
         DocumentReference dbCurUser = db.collection("Users").document(curUsr.getUid());
 
         // chat items sorted
-//        dbChat.collection("Chat")
-//                .orderBy("DateSend", Query.Direction.DESCENDING)
-//                .get()
-//                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                        ArrayList<ChatBubble> chatBubbles = new ArrayList<ChatBubble>();
-//                        for (QueryDocumentSnapshot document : task.getResult()) {
-//                            Map<String, Object> myData = document.getData();
-//
-//                            chatBubbles.add(new ChatBubble(
-//                                document.getId(),
-//                                (String) myData.get("value"),
-//                                (Date) myData.get("DateSend"),
-//                                "",
-//                                "",
-//                                true
-//                            ));
-//                        }
-//                    }
-//                });
+        dbChat.collection("Chat")
+                .orderBy("DateSend", Query.Direction.DESCENDING)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        ArrayList<ChatBubble> chatBubbles = new ArrayList<ChatBubble>();
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            Map<String, Object> myData = document.getData();
+
+                            Timestamp msgTime = (Timestamp) myData.get("DateSend");
+
+                            chatBubbles.add(new ChatBubble(
+                                    document.getId(),
+                                    myData.get("value").toString(),
+                                    msgTime.toDate(),
+                                    "Jahwe",
+                                    "/404.jpeg",
+                                    true
+                            ));
+                            
+                            mAdapter.updateList(chatBubbles);
+                            mAdapter.notifyDataSetChanged();
+                        }
+                    }
+                });
 
         return v;
     }
