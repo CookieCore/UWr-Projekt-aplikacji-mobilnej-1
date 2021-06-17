@@ -68,7 +68,6 @@ public class ConversationFragment extends Fragment {
 
         // get chat reference
         DocumentReference dbChat = db.collection("Chat").document(chatId);
-        DocumentReference dbCurUser = db.collection("Users").document(curUsr.getUid());
 
         // chat items sorted
         dbChat.collection("Chat")
@@ -78,11 +77,11 @@ public class ConversationFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         ArrayList<ChatBubble> chatBubbles = new ArrayList<ChatBubble>();
+
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             Map<String, Object> myData = document.getData();
 
                             Timestamp msgTime = (Timestamp) myData.get("DateSend");
-                            DocumentReference msgUser = (DocumentReference) myData.get("Sender");
 
                             // id, text, date
                             chatBubbles.add(new ChatBubble(
@@ -93,12 +92,15 @@ public class ConversationFragment extends Fragment {
                                     "/404.jpeg",
                                     false
                             ));
+                        }
+                        mAdapter.updateList(chatBubbles);
+                        mAdapter.notifyDataSetChanged();
 
-                            mAdapter.updateList(chatBubbles);
-                            mAdapter.notifyDataSetChanged();
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            Map<String, Object> myData = document.getData();
+                            DocumentReference msgUser = (DocumentReference) myData.get("Sender");
 
                             // user name, avatar;
-                            Log.d(TAG, "msgUser: " + msgUser);
                             msgUser.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -126,7 +128,6 @@ public class ConversationFragment extends Fragment {
                                     tmpChatBubble.setAvatar(avatar);
                                     tmpChatBubble.setIsMe(isMe);
                                     mAdapter.updaterListById(document.getId(), tmpChatBubble);
-                                    mAdapter.updateList(chatBubbles);
                                     mAdapter.notifyDataSetChanged();
                                 }
                             });
