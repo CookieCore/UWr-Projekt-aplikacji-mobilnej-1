@@ -1,7 +1,9 @@
 package com.example.iugales;
 
 import android.annotation.SuppressLint;
+import android.icu.text.SimpleDateFormat;
 import android.os.Build;
+import android.text.format.DateFormat;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -85,32 +87,58 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
-        int sizeChat = chatBubbles.size();
+        final Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -1);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(chatBubbles.get(position).getMsgDate());
         holder.content.setText(chatBubbles.get(position).getMsgText());
         holder.date.setText(chatBubbles.get(position).getMsgDate().toString()); // do not delete .toString(), as getMsgDate culd return object date in the future
         Log.d(TAG, "IsMe: " + chatBubbles.get(position).getIsMe());
 
-
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = Calendar.getInstance().getTime();
         //Log.d(TAG, "dupaki" + chatBubbles.get(position).getMsgDate().getTime());
         //Log.d(TAG, "sraki" + date.getTime());
         if(DateUtils.isToday(chatBubbles.get(position).getMsgDate().getTime()) == DateUtils.isToday(date.getTime()))
         {
+            Log.d(TAG, "dzisiaj: "+ position);
 
-            //Log.d(TAG, "sraki" + DateUtils.getRelativeDateTimeString(chatBubbles.get(position).getMsgDate().getTime()));
-            if(position-1 == -1)
+            if(position+1 > chatBubbles.size())
             {
                 int dupa =0;
             }
-            else if(chatBubbles.get(position).getMsgDate().getTime() - chatBubbles.get(position-1).getMsgDate().getTime() > 1800000)
+            else if(chatBubbles.get(position).getMsgDate().getTime() - chatBubbles.get(position+1).getMsgDate().getTime() > 1800000)
             {
-                Log.d(TAG, "dupaki");
                 holder.date.setVisibility(View.VISIBLE);
             }
-            //Log.d(TAG, "dupaki");
-        }
-        //else if(DateUtils)
 
+            Log.d(TAG, " " + String.valueOf(chatBubbles.get(4).getMsgDate().getTime() - chatBubbles.get(4-1).getMsgDate().getTime()) );
+        }
+        else if(calendar.get(Calendar.DAY_OF_YEAR) == cal.get(Calendar.DAY_OF_YEAR)-1)
+        {
+            Log.d(TAG, "wczoraj poz "+position );
+            if(position+1 > chatBubbles.size()-1)
+            {
+                int dupa =0;
+            }
+            else if(chatBubbles.get(position).getMsgDate().getTime() - chatBubbles.get(position+1).getMsgDate().getTime() > 1800000)
+            {
+                Log.d(TAG, "wczorajo");
+                holder.date.setVisibility(View.VISIBLE);
+                holder.date.setText(chatBubbles.get(position).getMsgDate().toString());
+            }
+        }
+        else if(position+1 > chatBubbles.size() || (chatBubbles.get(position).getMsgDate().getTime() - chatBubbles.get(position+1).getMsgDate().getTime() > 1800000))
+        {
+            holder.date.setVisibility(View.VISIBLE);
+            holder.date.setText(chatBubbles.get(position).getMsgDate().toString());
+        }
+
+        if(position - 1 == -1 || chatBubbles.get(position-1).getMsgSenderName() != chatBubbles.get(position).getMsgSenderName())
+        {
+            holder.imageView.setVisibility(View.VISIBLE);
+            holder.imageView.setImageResource(R.drawable.ic_ico_v2);
+        }
 
         if (chatBubbles.get(position).getIsMe()) {
             Log.d(TAG, "saved as meee");
@@ -118,7 +146,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
         }
 
         //if(chatBubbles.)
-        switch (position){
+        /*switch (position){
             case 6:
                 holder.date.setVisibility(View.VISIBLE);
                 holder.date.setText(new Date().toString());
@@ -145,7 +173,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
                 holder.imageView.setVisibility(View.VISIBLE);
                 holder.imageView.setImageResource(R.drawable.ic_ico_v2);
                 break;
-        }
+        }*/
 
 
         //if(position == 2) holder.imageView.setVisibility(View.VISIBLE);
