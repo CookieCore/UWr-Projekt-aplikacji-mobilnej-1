@@ -18,6 +18,7 @@ import com.google.type.DateTime;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHolder>  {
@@ -28,15 +29,15 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
 
     public MessagesAdapter(ConversationFragment parent) {
         mParent = parent;
-        Log.d(TAG, "chatBubbles: " + chatBubbles);
-        chatBubbles.add(new ChatBubble("myId0", "txt 0", new Date(), "me", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", true));
-        chatBubbles.add(new ChatBubble("myId1", "txt 1", new Date(), "On", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", false));
-        chatBubbles.add(new ChatBubble("myId2", "txt 2", new Date(), "me", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", true));
-        chatBubbles.add(new ChatBubble("myId3", "txt 3", new Date(), "On", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", false));
-        chatBubbles.add(new ChatBubble("myId4", "txt 4", new Date(), "On", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", false));
-        chatBubbles.add(new ChatBubble("myId5", "txt 5", new Date(), "me", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", true));
-        chatBubbles.add(new ChatBubble("myId6", "txt 6", new Date(), "me", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", true));
-        Log.d(TAG, "chatBubbles: " + chatBubbles);
+        //Log.d(TAG, "chatBubbles: " + chatBubbles);
+        //chatBubbles.add(new ChatBubble("myId0", "txt 0", new Date(), "me", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", true));
+        //chatBubbles.add(new ChatBubble("myId1", "txt 1", new Date(), "On", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", false));
+        //chatBubbles.add(new ChatBubble("myId2", "txt 2", new Date(), "me", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", true));
+        //chatBubbles.add(new ChatBubble("myId3", "txt 3", new Date(), "On", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", false));
+        //chatBubbles.add(new ChatBubble("myId4", "txt 4", new Date(), "On", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", false));
+        //chatBubbles.add(new ChatBubble("myId5", "txt 5", new Date(), "me", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", true));
+        //chatBubbles.add(new ChatBubble("myId6", "txt 6", new Date(), "me", "https://firebasestorage.googleapis.com/v0/b/iugales.appspot.com/o/Avatars%2F%C5%82adnyJa2_1mb.jpg?alt=media&token=0931d2a0-606d-4914-8e99-7f12449ba792", true));
+        //Log.d(TAG, "chatBubbles: " + chatBubbles);
     }
 
     @NonNull
@@ -55,6 +56,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
         chatBubbles.clear();
         chatBubbles.addAll(newList);
         notifyDataSetChanged();
+        Log.d(TAG, "chatBubbles: " + newList);
     }
 
     public ChatBubble getChatBubbleWhereId(String id) {
@@ -80,11 +82,19 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         holder.content.setText(chatBubbles.get(position).getMsgText());
         holder.date.setText(chatBubbles.get(position).getMsgDate().toString()); // do not delete .toString(), as getMsgDate culd return object date in the future
-        Log.d(TAG, "IsMe: " + chatBubbles.get(position).IsMe());
-        if (chatBubbles.get(position).IsMe()) {
+        Log.d(TAG, "IsMe: " + chatBubbles.get(position).getIsMe());
+        if (chatBubbles.get(position).getIsMe()) {
             Log.d(TAG, "saved as meee");
             setAsMe(holder);
         }
+
+        Date date = Calendar.getInstance().getTime();
+        if(chatBubbles.get(position).getMsgDate() == date)
+        {
+            
+        }
+
+        //if(chatBubbles.)
         switch (position){
             case 6:
                 holder.date.setVisibility(View.VISIBLE);
