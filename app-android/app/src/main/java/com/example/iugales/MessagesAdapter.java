@@ -93,15 +93,14 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
         calendar.setTime(chatBubbles.get(position).getMsgDate());
         holder.content.setText(chatBubbles.get(position).getMsgText());
         holder.date.setText(chatBubbles.get(position).getMsgDate().toString()); // do not delete .toString(), as getMsgDate culd return object date in the future
-        Log.d(TAG, "IsMe: " + chatBubbles.get(position).getIsMe());
+        //Log.d(TAG, "IsMe: " + chatBubbles.get(position).getIsMe());
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = Calendar.getInstance().getTime();
-        //Log.d(TAG, "dupaki" + chatBubbles.get(position).getMsgDate().getTime());
-        //Log.d(TAG, "sraki" + date.getTime());
+
         if(DateUtils.isToday(chatBubbles.get(position).getMsgDate().getTime()) == DateUtils.isToday(date.getTime()))
         {
-            Log.d(TAG, "dzisiaj: "+ position);
+            //Log.d(TAG, "dzisiaj: "+ position);
             if(position+1 >= chatBubbles.size() || chatBubbles.get(position).getMsgDate().getTime() - chatBubbles.get(position+1).getMsgDate().getTime() > 1800000)
             {
                 holder.date.setVisibility(View.VISIBLE);
@@ -111,10 +110,10 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
         }
         else if(calendar.get(Calendar.DAY_OF_YEAR) == cal.get(Calendar.DAY_OF_YEAR)-1)
         {
-            Log.d(TAG, "wczoraj poz "+position );
+            //Log.d(TAG, "wczoraj poz "+position );
             if(position+1 >= chatBubbles.size() || chatBubbles.get(position).getMsgDate().getTime() - chatBubbles.get(position+1).getMsgDate().getTime() > 1800000)
             {
-                Log.d(TAG, "wczorajo");
+                //Log.d(TAG, "wczorajo");
                 holder.date.setVisibility(View.VISIBLE);
                 holder.date.setText(chatBubbles.get(position).getMsgDate().toString());
             }
@@ -125,16 +124,22 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
             holder.date.setText(chatBubbles.get(position).getMsgDate().toString());
         }
 
-        if(position+1 >= chatBubbles.size() || chatBubbles.get(position+1).getMsgSenderName() != chatBubbles.get(position).getMsgSenderName())
+        if(position-1 == -1 || chatBubbles.get(position).getIsMe() != chatBubbles.get(position-1).getIsMe() )
         {
 
             holder.imageView.setVisibility(View.VISIBLE);
             holder.imageView.setImageResource(R.drawable.ic_ico_v2);
         }
+        else
+        {
+            holder.imageView.setVisibility(View.INVISIBLE);
+            holder.imageView.setImageResource(R.drawable.ic_ico_v2);
+        }
 
+        Log.d(TAG, "pozycja: " + position + " wiad: " + chatBubbles.get(position).getMsgText() + " nad: " + chatBubbles.get(position).getMsgSenderName());
 
         if (chatBubbles.get(position).getIsMe()) {
-            Log.d(TAG, "saved as meee");
+            //Log.d(TAG, "saved as meee");
             setAsMe(holder);
         }
 
