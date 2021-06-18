@@ -102,7 +102,7 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
                 AppCompatActivity activity = (AppCompatActivity) mParent.getContext();
                 ConversationFragment fragment = new ConversationFragment();
                 Bundle bundle = new Bundle();
-                bundle.putString("chatID", chatItem.chatId);
+                bundle.putString("chatID", chatItem.getChatId());
                 fragment.setArguments(bundle);
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
             }

@@ -112,8 +112,8 @@ public class MessagesFragment extends Fragment {
                                             ChatListItem tmpChatItem;
                                             if (mAdapter.getChatItemWhereId(document.getId()) != null) {
                                                 tmpChatItem = mAdapter.getChatItemWhereId(document.getId());
-                                                tmpChatItem.lastMsgText = value;
-                                                tmpChatItem.lastMsgDate = messageDate.toString();
+                                                tmpChatItem.setLastMsgText(value);
+                                                tmpChatItem.setLastMsgDate(messageDate.toString());
                                                 mAdapter.updateItemWhereId(document.getId(), tmpChatItem);
                                                 mAdapter.notifyDataSetChanged();
                                             }
@@ -140,8 +140,8 @@ public class MessagesFragment extends Fragment {
                                                         ChatListItem tmpChatItem;
                                                         if (mAdapter.getChatItemWhereId(document.getId()) != null) {
                                                             tmpChatItem = mAdapter.getChatItemWhereId(document.getId());
-                                                            tmpChatItem.lastMsgSenderName = senderName;
-                                                            tmpChatItem.lastMsgText = senderName + ": " + value; //todo when there is field for name of last text chat autor. delete
+                                                            tmpChatItem.setLastMsgSenderName(senderName);
+                                                            tmpChatItem.setLastMsgText(senderName + ": " + value); //todo when there is field for name of last text chat autor. delete
                                                             mAdapter.updateItemWhereId(document.getId(), tmpChatItem);
                                                             mAdapter.notifyDataSetChanged();
                                                         }
@@ -176,7 +176,7 @@ public class MessagesFragment extends Fragment {
                                                         ChatListItem tmpChatItem;
                                                         if (mAdapter.getChatItemWhereId(document.getId()) != null) {
                                                             tmpChatItem = mAdapter.getChatItemWhereId(document.getId());
-                                                            tmpChatItem.remoteName = firstLastName;
+                                                            tmpChatItem.setRemoteName(firstLastName);
                                                             mAdapter.updateItemWhereId(document.getId(), tmpChatItem);
                                                             mAdapter.notifyDataSetChanged();
                                                         }

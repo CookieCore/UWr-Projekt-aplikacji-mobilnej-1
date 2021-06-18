@@ -1,13 +1,12 @@
 package com.example.iugales.model;
 
 public class ChatListItem {
-    // TODO: 6/16/21 zmienić na privat i sprawidzć czy się nie zjebało
-    public String chatId;
-    public String lastMsgText;
-    public String lastMsgDate;
-    public String lastMsgSenderName;
-    public String remoteName;
-    public String remoteImage;
+    private String chatId;
+    private String lastMsgText;
+    private String lastMsgDate;
+    private String lastMsgSenderName;
+    private String remoteName;
+    private String remoteImage;
 
     public ChatListItem(String chatId, String lastMsgText, String lastMsgDate, String lastMsgSenderName, String remoteName, String remoteImage ){
         this.chatId = chatId;
@@ -24,6 +23,11 @@ public class ChatListItem {
     public String getLastMsgSenderName() { return lastMsgSenderName; }
     public String getRemoteName() { return remoteName; }
     public String getRemoteImage() { return remoteImage; }
+
+    public void setRemoteName(String name) { this.remoteName = name; }
+    public void setLastMsgDate(String date) { this.lastMsgDate = date; }
+    public void setLastMsgSenderName(String name) { this.lastMsgSenderName = name; }
+    public void setLastMsgText(String text) { this.lastMsgText = text; }
 
     @Override
     public String toString() {
