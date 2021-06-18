@@ -125,11 +125,13 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
             holder.date.setText(chatBubbles.get(position).getMsgDate().toString());
         }
 
-        if(position - 1 == -1 || chatBubbles.get(position-1).getMsgSenderName() != chatBubbles.get(position).getMsgSenderName())
+        if(position+1 >= chatBubbles.size() || chatBubbles.get(position+1).getMsgSenderName() != chatBubbles.get(position).getMsgSenderName())
         {
+
             holder.imageView.setVisibility(View.VISIBLE);
             holder.imageView.setImageResource(R.drawable.ic_ico_v2);
         }
+
 
         if (chatBubbles.get(position).getIsMe()) {
             Log.d(TAG, "saved as meee");

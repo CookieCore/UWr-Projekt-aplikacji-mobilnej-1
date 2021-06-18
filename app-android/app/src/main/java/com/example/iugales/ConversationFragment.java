@@ -1,5 +1,6 @@
 package com.example.iugales;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.iugales.databinding.FragmentConversationBinding;
@@ -172,11 +174,25 @@ public class ConversationFragment extends Fragment {
             @Override
             public void onComplete(@NonNull @NotNull Task<Void> task) {
                 Toast.makeText(getContext(), "Wysyłanie zakończone", Toast.LENGTH_SHORT).show();
+                Refresh();
             }
+
         })
         .addOnFailureListener(e -> {
             Toast.makeText(getContext(), "Błąd podczas wysyłania", Toast.LENGTH_SHORT).show();
         });
+
+
+    }
+
+    void Refresh()
+    {
+        mBinding.messageEditText.setText("");
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        if (Build.VERSION.SDK_INT >= 26) {
+            ft.setReorderingAllowed(false);
+        }
+        ft.detach(this).attach(this).commit();
     }
 
    @Override
