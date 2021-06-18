@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -41,6 +42,8 @@ public class ConversationFragment extends Fragment {
 
     private String TAG = "ConversationFragment";
 
+    //private ChatListItem chatListItem = new ChatListItem();
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,14 +55,17 @@ public class ConversationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         mBinding = FragmentConversationBinding.inflate(getLayoutInflater());
         View v = mBinding.getRoot();
-
+        //savedInstanceState.get()
         LinearLayoutManager linearLayout = new LinearLayoutManager(getActivity());
         linearLayout.setReverseLayout(true);
         mBinding.msgContainer.setLayoutManager( linearLayout );
         mAdapter = new MessagesAdapter(this);
         mBinding.msgContainer.setAdapter(mAdapter);
 
-        String chatId = "oB0BDLGGuB9MdzlzdlOa"; // TODO: 6/16/21 give me chat id from clicket chat form list
+        Bundle args = getArguments();
+        String chatId = args.getString("chatID");
+
+        //String chatId = "oB0BDLGGuB9MdzlzdlOa"; // TODO: 6/16/21 give me chat id from clicket chat form list
 
         // download chats
         mAuth = FirebaseAuth.getInstance();
@@ -135,7 +141,19 @@ public class ConversationFragment extends Fragment {
                     }
                 });
 
+
+        mBinding.msgSendBtn.setOnClickListener(vf -> {
+            OnTextSend(String.valueOf(mBinding.messageEditText.getText()),chatId);
+            //mBinding.messageEditText.getText();
+        });
+
         return v;
+    }
+
+    void OnTextSend(String messageText, String chatID)
+    {
+        Log.d(TAG, messageText);
+        Log.d(TAG, chatID);
     }
 
    @Override
