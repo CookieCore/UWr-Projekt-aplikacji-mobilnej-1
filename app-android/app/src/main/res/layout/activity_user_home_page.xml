@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".test.TestNavigationActivity"
+    android:background="@color/bg_0c"
+    android:id="@+id/drawerLayout">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/layoutToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/txtAccent_1c"
+            app:itemTextColor="@drawable/nav_bar_color"
+            app:itemIconTint="@drawable/nav_bar_color"
+            >
+            <ImageView
+                android:id="@+id/imageMenu"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_menu_24"
+                />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="55dp"
+            tools:context=".MainActivity">
+
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/fragment_container"
+                android:layout_above="@id/navBar"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                app:defaultNavHost="true"/>
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/navBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                app:menu="@menu/bottom_nav_bar"
+                android:background="@color/txtAccent_1c"
+                app:itemTextColor="@drawable/nav_bar_color"
+                app:itemIconTint="@drawable/nav_bar_color"/>
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/layout_navigation_header"
+        android:layout_gravity="start"
+        app:menu="@menu/test_menu"
+        android:background="@color/txtAccent_1c"
+        app:itemTextColor="@drawable/nav_bar_color"
+        app:itemIconTint="@drawable/nav_bar_color"
+        />
+</androidx.drawerlayout.widget.DrawerLayout>

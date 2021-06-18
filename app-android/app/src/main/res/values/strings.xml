@@ -1,10 +1,119 @@
 <resources>
     <string name="app_name">Iugales</string>
-    
+
     <!-- Our -->
-        <!-- Activity Login  -->
-        <string name="Login">Login</string>
-        <string name="Password">Password</string>
-        <string name="Email">E-mal</string>
+    <!-- Activity Login  -->
+    <string name="login">Login</string>
+    <string name="loginEmail">E-mail</string>
+    <string name="loginPassword">Password</string>
+    <string name="loginButton">Login</string>
+    <string name="otherLoginMethods">─── Or ───</string>
+    <string name="forgotPassword">Forgot password?</string>
+    <string name="reSendConfirmEmail">Send Email confirmation again.</string>
+    <string name="createAccount">Create new account</string>
+    <string name="logErrorEmail">Write valid email.</string>
+    <string name="logErrorEmailOrPassword">Email or password are incorrect. Try again or reset the password by clicking \"Forgot password?\" button.</string>
+    <string name="logErrorEmailNotConfirm">Pleas confirm your email.</string>
+    <string name="sendingEmailPassword">Sending a password reset link.</string>
+    <string name="sendingEmailConfirmEmail">Sending Email activation link.</string>
+
+    <!-- Activity Verify -->
+    <string name="verify">Verification</string>
+    <string name="verifyMessage">Almost there.\n\n Before you can log in, you need to confirm your email address first.\n\n Check your email box for verification link from \"no-reply\" email address. If you can\'t find it check spam folder or click \"Resend the verification email\" button.</string>
+    <string name="verifyEmailMessage">You are trying to log in as</string>
+    <string name="verifyNoEmail">&lt;user&gt;@&lt;host.address&gt;</string>
+    <string name="verifyLogin">Try logging in again</string>
+    <string name="verifyResend">Resend the verification email</string>
+
+    <!-- Activity Register  -->
+    <string name="register">Register</string>
+    <string name="registerPersonalData">Personal data</string>
+    <string name="registerFirstName">First name</string>
+    <string name="registerLastName">Last name</string>
+    <string name="registerLoginData">Login data</string>
+    <string name="registerEmail">E-mail</string>
+    <string name="registerPassword">Password</string>
+    <string name="registerPasswordRules">min. 8 characters, use at least one of caps, numbers and special character</string>
+    <string name="registerManager">I\'m a project manager</string>
+    <string name="registerTermsAndConditions">I have read and agree to terms and conditions</string>
+    <string name="registerTermsAndConditionsButton">terms and conditions</string>
+    <string name="registerButton">Register</string>
+    <string name="haveAccount">I already have an account</string>
+    <string name="regErrorTermsAndConditions">You need to agree to our terms and conditions</string>
+    <string name="regErrorFirstName">Tell us your first name</string>
+    <string name="regErrorLastName">Tell us your last name</string>
+    <string name="regErrorPassword">Password need to be larger then 6 characters</string>
+    <string name="regErrorEmail">Write correct email</string>
+    <string name="regErrorRegister">Authentication failed.</string>
+    <string name="regErrorServerError">Unknown error, contact administrator.</string>
+
+    <!-- UserHome  -->
+    <string name="userHomeWelcoming">Welcome,</string>
+    <string name="userHomeUserName">&lt;User.name&gt;</string>
+    <string name="userHomeSkills">Your top skills:</string>
+    <string name="userHomeSkillsMore">More</string>
+    <string name="userHomeEvents">Events</string>
+    <string name="userHomeEventsToday">Today\'s events</string>
+    <string name="userHomeEventsNoToday">There\'s no events for today</string>
+    <string name="userHomeEventsTomorrow">Tomorrows\'s events</string>
+    <string name="userHomeEventsNoTomorrows">There\'s no events for tomorrow</string>
+    <string name="userHomeEventsLater">Later events</string>
+    <string name="userHomeEventsNoLater">There\'s no events later</string>
+
+    <!-- Skills  -->
+    <string name="skill_cpp">C++</string>
+    <string name="skill_c_sharp">C#</string>
+    <string name="skill_c">C</string>
+    <string name="skill_java">Java</string>
+    <string name="skill_python">Python</string>
+    <string name="skill_regex">RegEx</string>
+    <string name="skill_js">JavaScript</string>
+    <string name="skill_white_space">White Space</string>
+    <string name="skill_unreal">Unreal</string>
+    <string name="skill_unity">Unity</string>
+    <string name="skill_kotlin">Kotlin</string>
+    <string name="skill_sql">SQL</string>
+    <string name="skill_excel">Excel</string>
+    <string name="skill_assembly">Assembly</string>
+    <string name="skill_open_gl">OpenGL</string>
+    <string name="skill_git">Git</string>
+    <string name="skill_cmake">CMake</string>
+    <string name="skill_testing">Testing</string>
+    <string name="skill_lab_view">LabView</string>
+    <string name="skill_mat_lab">MatLab</string>
+    <string name="skill_django">Django</string>
+    <string name="skill_qt">QT</string>
+    <string name="skill_agile">Agile Programing</string>
+
+    <string name="skill_presenting">Presenting</string>
+    <string name="skill_managing">Managing</string>
+
+    <!-- Skills Pop out -->
+    <string name="skillsPopOut_save">save</string>
+    <string name="skillsPopOut_remove">remove</string>
+    <string name="skillsPopOut_cancel">cancel</string>
+    <string name="skillsPopOut_hitName">Skill</string>
+    <string name="skillsPopOut_nameTitle">What\' your skill?</string>
+    <string name="skillsPopOut_levelTitle">How well you know it?</string>
+    <string name="skillsPopOut_aboutRemove">You\'re about to remove your skill</string>
+    <string name="skillsPopOut_areYouSure">Are you sure you want to continue?</string>
+
+    <!-- Company -->
+    <string name="company_projectName">&lt;Project.name&gt;</string>
+    <string name="company_projectDescription">&lt;Project.description&gt;</string>
+    <string name="company_projectRequirements">&lt;Project.requirements&gt;</string>
+    <string name="company_projectPeople">&lt;Project.people&gt;</string>
+    <string name="company_projectJoin">Join</string>
+    <string name="company_projectLeave">Leave</string>
+
+    <!-- Contact  -->
+    <string name="contactName">&lt;Contact.name&gt;</string>
+    <string name="contactLastMessage">&lt;Contact.lastMessage&gt;</string>
+    <string name="contactLastMessageDate">&lt;Contact.lastMessageDate&gt;</string>
+
+    <!-- Conversation  -->
+    <string name="textHint">Text</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "455932351150",
+    "project_id": "iugales",
+    "storage_bucket": "iugales.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455932351150:android:3f666cf74e2fd5ecdf533f",
+        "android_client_info": {
+          "package_name": "com.example.iugales"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "455932351150-chrs2nni936j4qhmbdpsr0njfrol65eg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB480PduIfxAY5CcE9wEW4_wvNdmbE1Cjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "455932351150-chrs2nni936j4qhmbdpsr0njfrol65eg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="20dp"
+        android:background="@color/bg_0c">
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/user_image"
+        android:layout_height="100dp"
+        android:layout_width="100dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/ic_user_circle_solid"/>
+
+
+
+    <TextView
+        android:id="@+id/user_welcome"
+        android:layout_toRightOf="@id/user_image"
+        android:layout_alignTop="@id/user_image"
+        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textColor="@color/txt_1c"
+        android:textSize="30sp"
+        android:text="@string/userHomeWelcoming"
+        />
+    <TextView
+        android:id="@+id/user_username"
+        android:layout_alignBottom="@id/user_image"
+        android:layout_toRightOf="@id/user_image"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/user_welcome"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textColor="@color/txt_1c"
+        android:textSize="20sp"
+        android:text="@string/userHomeUserName"
+        />
+    <ImageView
+        android:id="@+id/sep_0"
+        android:layout_marginVertical="15dp"
+        android:layout_below="@id/user_image"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:src="@drawable/msg_bubble"/>
+    <TextView
+        android:id="@+id/user_skills_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sep_0"
+        android:text="@string/userHomeSkills"
+        android:textSize="20dp"
+        android:textColor="@color/txt_1c"
+        />
+
+    <RelativeLayout
+        android:id="@+id/user_skills_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/user_skills_textView"
+        >
+
+        <ImageView
+            android:id="@+id/user_skills_i0"
+            android:visibility="gone"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@id/user_skills_t0"
+            android:layout_alignTop="@id/user_skills_t0"
+            android:layout_marginRight="20dp"/>
+        <TextView
+            android:id="@+id/user_skills_t0"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/user_skills_i0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="@color/txt_0c"
+            />
+
+
+        <ImageView
+            android:id="@+id/user_skills_i1"
+            android:visibility="gone"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@id/user_skills_t1"
+            android:layout_alignTop="@id/user_skills_t1"
+            android:layout_marginRight="20dp"/>
+        <TextView
+            android:id="@+id/user_skills_t1"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/user_skills_t0"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/user_skills_i1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="@color/txt_0c"
+            />
+
+        <ImageView
+            android:id="@+id/user_skills_i2"
+            android:visibility="gone"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@id/user_skills_t2"
+            android:layout_alignTop="@id/user_skills_t2"
+            android:layout_marginRight="20dp"/>
+        <TextView
+            android:id="@+id/user_skills_t2"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/user_skills_t1"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/user_skills_i2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="@color/txt_0c"
+            />
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/user_skills_more"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/user_skills_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#0000"
+        android:text="@string/userHomeSkillsMore"
+        android:textColor="@color/txtAccent_0c"
+        />
+
+    <ImageView
+        android:id="@+id/sep_1"
+        android:layout_marginVertical="15dp"
+        android:layout_below="@id/user_skills_more"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:src="@drawable/msg_bubble"/>
+
+    <TextView
+        android:id="@+id/user_events_text"
+        android:layout_below="@id/sep_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/txt_1c"
+        android:text="@string/userHomeEvents"/>
+
+    <TextView
+            android:id="@+id/user_today_text"
+            android:layout_below="@id/user_events_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/txt_2c"
+            android:text="@string/userHomeEventsNoToday"/>
+
+        <com.app.Settings.ExpandableHeightListView
+            android:id="@+id/user_today_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_today_text"
+            android:layout_marginTop="-2dp"
+            android:divider="#0000"
+            android:drawSelectorOnTop="true"
+            android:listSelector="#0000"
+            android:cacheColorHint="#00000000"
+            android:fadingEdge="none"
+            android:focusable="false"
+            android:scrollbars="none"/>
+
+        <TextView
+        android:id="@+id/user_tomorrow_text"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/user_today_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="@color/txt_1c"
+        android:text="@string/userHomeEventsNoTomorrows"/>
+    <com.app.Settings.ExpandableHeightListView
+        android:id="@+id/user_tomorrow_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true"
+        android:divider="#0000"
+        android:listSelector="#0000"
+        android:layout_below="@id/user_tomorrow_text"
+        android:cacheColorHint="#00000000"
+        android:fadingEdge="none"
+        android:focusable="false"
+        android:scrollbars="none"/>
+
+        <TextView
+            android:id="@+id/user_laterEvents_text"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/user_tomorrow_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/txt_1c"
+            android:text="@string/userHomeEventsNoLater"/>
+        <com.app.Settings.ExpandableHeightListView
+            android:id="@+id/user_laterEvents_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawSelectorOnTop="true"
+            android:divider="#0000"
+            android:listSelector="#0000"
+            android:layout_below="@id/user_laterEvents_text"
+            android:cacheColorHint="#00000000"
+            android:fadingEdge="none"
+            android:focusable="false"
+            android:scrollbars="none"/>
+
+
+    </RelativeLayout>
+</ScrollView>

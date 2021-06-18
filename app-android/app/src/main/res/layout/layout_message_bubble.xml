@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/messageLayout">
+    <TextView
+        android:id="@+id/messageDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/txt_2c"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_alignParentTop="true"/>
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/messageOwnerImage"
+        android:src="@drawable/ic_user_circle_solid"
+        android:layout_alignParentLeft="true"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_alignBottom="@id/messageContent"
+        android:visibility="invisible"
+        civ_border_color="@color/txt_0c"
+        app:civ_border_width="1sp"
+        app:civ_shadow="false"
+
+        />
+
+    <TextView
+        android:layout_below="@id/messageDate"
+        android:id="@+id/messageContent"
+        android:layout_width="wrap_content"
+        android:maxWidth="250dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/messageOwnerImage"
+        android:textSize="12dp"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/msg_bubble"
+        android:backgroundTint="@color/txt_1c"/>
+
+</RelativeLayout>

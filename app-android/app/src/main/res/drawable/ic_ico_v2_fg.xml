@@ -9,7 +9,7 @@
       android:strokeLineJoin="round"
       android:strokeWidth="10"
       android:fillColor="#00000000"
-      android:strokeColor="#cb5156"
+      android:strokeColor="#FFDF7774"
       android:fillType="evenOdd"
       android:fillAlpha="0.996"
       android:strokeLineCap="round"/>
@@ -19,7 +19,7 @@
       android:strokeLineJoin="round"
       android:strokeWidth="10"
       android:fillColor="#00000000"
-      android:strokeColor="#cb5156"
+      android:strokeColor="#FFDF7774"
       android:fillType="evenOdd"
       android:fillAlpha="0.996"
       android:strokeLineCap="round"/>
@@ -29,7 +29,7 @@
       android:strokeLineJoin="round"
       android:strokeWidth="10"
       android:fillColor="#00000000"
-      android:strokeColor="#cb5156"
+      android:strokeColor="#FFDF7774"
       android:fillType="evenOdd"
       android:fillAlpha="0.996"
       android:strokeLineCap="round"/>
@@ -39,7 +39,7 @@
       android:strokeLineJoin="round"
       android:strokeWidth="10"
       android:fillColor="#00000000"
-      android:strokeColor="#cb5156"
+      android:strokeColor="#FFDF7774"
       android:fillType="evenOdd"
       android:fillAlpha="0.996"
       android:strokeLineCap="round"/>
@@ -49,7 +49,7 @@
       android:strokeLineJoin="round"
       android:strokeWidth="10"
       android:fillColor="#00000000"
-      android:strokeColor="#cb5156"
+      android:strokeColor="#FFDF7774"
       android:fillType="evenOdd"
       android:fillAlpha="0.996"
       android:strokeLineCap="round"/>
@@ -59,7 +59,7 @@
       android:strokeLineJoin="round"
       android:strokeWidth="10"
       android:fillColor="#00000000"
-      android:strokeColor="#cb5156"
+      android:strokeColor="#FFDF7774"
       android:fillType="evenOdd"
       android:fillAlpha="0.996"
       android:strokeLineCap="round"/>
@@ -69,7 +69,7 @@
       android:strokeLineJoin="round"
       android:strokeWidth="10"
       android:fillColor="#00000000"
-      android:strokeColor="#cb5156"
+      android:strokeColor="#FFDF7774"
       android:fillType="evenOdd"
       android:fillAlpha="0.996"
       android:strokeLineCap="round"/>
@@ -79,7 +79,7 @@
       android:strokeLineJoin="round"
       android:strokeWidth="10"
       android:fillColor="#00000000"
-      android:strokeColor="#cb5156"
+      android:strokeColor="#FFDF7774"
       android:fillType="evenOdd"
       android:fillAlpha="0.996"
       android:strokeLineCap="round"/>
@@ -89,7 +89,7 @@
       android:strokeLineJoin="round"
       android:strokeWidth="10"
       android:fillColor="#00000000"
-      android:strokeColor="#cb5156"
+      android:strokeColor="#FFDF7774"
       android:fillType="evenOdd"
       android:fillAlpha="0.996"
       android:strokeLineCap="round"/>
@@ -99,7 +99,7 @@
       android:strokeLineJoin="round"
       android:strokeWidth="10"
       android:fillColor="#00000000"
-      android:strokeColor="#cb5156"
+      android:strokeColor="#FFDF7774"
       android:fillType="evenOdd"
       android:fillAlpha="0.996"
       android:strokeLineCap="round"/>
@@ -109,7 +109,7 @@
       android:strokeLineJoin="miter"
       android:strokeWidth="10"
       android:fillColor="#00000000"
-      android:strokeColor="#cb5156"
+      android:strokeColor="#FFDF7774"
       android:fillAlpha="0.996"
       android:strokeLineCap="round"/>
   <path
@@ -118,7 +118,7 @@
       android:strokeLineJoin="miter"
       android:strokeWidth="10"
       android:fillColor="#00000000"
-      android:strokeColor="#cb5156"
+      android:strokeColor="#FFDF7774"
       android:fillAlpha="0.996"
       android:strokeLineCap="round"/>
   <path
@@ -127,7 +127,7 @@
       android:strokeLineJoin="miter"
       android:strokeWidth="10"
       android:fillColor="#00000000"
-      android:strokeColor="#cb5156"
+      android:strokeColor="#FFDF7774"
       android:fillAlpha="0.996"
       android:strokeLineCap="round"/>
   <path
@@ -136,7 +136,7 @@
       android:strokeLineJoin="miter"
       android:strokeWidth="10"
       android:fillColor="#00000000"
-      android:strokeColor="#cb5156"
+      android:strokeColor="#FFDF7774"
       android:fillAlpha="0.996"
       android:strokeLineCap="round"/>
   <path
@@ -145,7 +145,7 @@
       android:strokeLineJoin="miter"
       android:strokeWidth="10"
       android:fillColor="#00000000"
-      android:strokeColor="#cb5156"
+      android:strokeColor="#FFDF7774"
       android:fillAlpha="0.996"
       android:strokeLineCap="round"/>
   <path
@@ -154,7 +154,7 @@
       android:strokeLineJoin="miter"
       android:strokeWidth="10"
       android:fillColor="#00000000"
-      android:strokeColor="#cb5156"
+      android:strokeColor="#FFDF7774"
       android:fillAlpha="0.996"
       android:strokeLineCap="round"/>
   <path
@@ -163,7 +163,7 @@
       android:strokeLineJoin="miter"
       android:strokeWidth="12.0185"
       android:fillColor="#00000000"
-      android:strokeColor="#cb5156"
+      android:strokeColor="#FFDF7774"
       android:fillAlpha="0.996"
       android:strokeLineCap="round"/>
 </vector>
