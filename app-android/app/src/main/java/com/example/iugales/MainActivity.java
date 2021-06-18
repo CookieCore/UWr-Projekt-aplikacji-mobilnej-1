@@ -1,11 +1,13 @@
 package com.example.iugales;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.iugales.databinding.ActivityMainBinding;
 import com.example.iugales.test.TestNavigationActivity;
@@ -30,13 +32,10 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         FirebaseUser currUsr = mAuth.getCurrentUser();
-        if(currUsr != null) {
-            String email = currUsr.getEmail();
-            binding.debugLogout.setText("Logged as " + email + ", Logout(DEBUG)");
-        } else {
-            binding.debugLogout.setText("Logged as NULL, (no need to)Logout(DEBUG)");
-        }
-
+        loadPage();
+        finish();
+        startActivity(getIntent());
+        /*
         binding.debugGoLogin.setOnClickListener(v -> {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
@@ -66,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.debugLoginIndicator.setText("debug text");
-
+*/
     }
 
     public void loadPage() {
@@ -78,4 +77,11 @@ public class MainActivity extends AppCompatActivity {
         }
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed() {
+        loadPage();
+    }
+
+
 }

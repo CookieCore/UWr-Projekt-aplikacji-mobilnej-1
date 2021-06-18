@@ -103,6 +103,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
             //Log.d(TAG, "dzisiaj: "+ position);
             if(position+1 >= chatBubbles.size() || chatBubbles.get(position).getMsgDate().getTime() - chatBubbles.get(position+1).getMsgDate().getTime() > 1800000)
             {
+                //Log.d(TAG, "wypisz czas: "+ chatBubbles.get(position).getMsgDate().getTime());
                 holder.date.setVisibility(View.VISIBLE);
             }
 
@@ -118,29 +119,30 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
                 holder.date.setText(chatBubbles.get(position).getMsgDate().toString());
             }
         }
-        else if(position+1 >= chatBubbles.size() || (chatBubbles.get(position).getMsgDate().getTime() - chatBubbles.get(position+1).getMsgDate().getTime() > 1800000))
+        else if(position+1 >= chatBubbles.size() || (chatBubbles.get(position+1).getMsgDate().getTime() - chatBubbles.get(position).getMsgDate().getTime() > 1800000))
         {
+            //Log.d(TAG, "godzina " + chatBubbles.get(position).getMsgDate().getTime());
+
             holder.date.setVisibility(View.VISIBLE);
             holder.date.setText(chatBubbles.get(position).getMsgDate().toString());
         }
 
+       /* if(position-1 == -1 || chatBubbles.get(position).getIsMe() != chatBubbles.get(position-1).getIsMe() ||  (position+1 > chatBubbles.size() && (chatBubbles.get(position+1).getMsgDate().getTime() - chatBubbles.get(position).getMsgDate().getTime() > 1800000)))
+        {
+            holder.imageView.setVisibility(View.VISIBLE);
+        }*/
+
         if(position-1 == -1 || chatBubbles.get(position).getIsMe() != chatBubbles.get(position-1).getIsMe() )
         {
-
             holder.imageView.setVisibility(View.VISIBLE);
-            holder.imageView.setImageResource(R.drawable.ic_ico_v2);
-        }
-        else
-        {
-            holder.imageView.setVisibility(View.INVISIBLE);
-            holder.imageView.setImageResource(R.drawable.ic_ico_v2);
         }
 
-        Log.d(TAG, "pozycja: " + position + " wiad: " + chatBubbles.get(position).getMsgText() + " nad: " + chatBubbles.get(position).getMsgSenderName());
+        Log.d(TAG, "pozycja: " + position + " wiad: " + chatBubbles.get(position).getMsgText() + " time: " + chatBubbles.get(position).getMsgDate().getTime());
 
         if (chatBubbles.get(position).getIsMe()) {
             //Log.d(TAG, "saved as meee");
             setAsMe(holder);
+            holder.imageView.setImageResource(R.drawable.ic_ico_v2);
         }
 
         //if(chatBubbles.)
