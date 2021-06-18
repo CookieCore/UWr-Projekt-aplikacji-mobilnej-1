@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -28,8 +29,11 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.type.DateTime;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 public class ConversationFragment extends Fragment {
@@ -65,8 +69,6 @@ public class ConversationFragment extends Fragment {
         Bundle args = getArguments();
         String chatId = args.getString("chatID");
 
-        //String chatId = "oB0BDLGGuB9MdzlzdlOa"; // TODO: 6/16/21 give me chat id from clicket chat form list
-
         // download chats
         mAuth = FirebaseAuth.getInstance();
         curUsr = mAuth.getCurrentUser();
@@ -94,8 +96,8 @@ public class ConversationFragment extends Fragment {
                                     document.getId(),
                                     myData.get("value").toString(),
                                     msgTime.toDate(),
-                                    "gff",
-                                    "/404.jpeg",
+                                    "",
+                                    "",
                                     false
                             ));
                         }
@@ -152,8 +154,29 @@ public class ConversationFragment extends Fragment {
 
     void OnTextSend(String messageText, String chatID)
     {
-        Log.d(TAG, messageText);
-        Log.d(TAG, chatID);
+        Log.d(TAG, "messageText: " + messageText);
+        Log.d(TAG, "chatID: " + chatID);
+//        private FirebaseAuth mAuth;
+//        private FirebaseUser curUsr;
+//        private FirebaseFirestore db;
+        DocumentReference senderUsrRef = db.collection("Users").document(curUsr.getUid());
+        DocumentReference chatDocRef = db.collection("Chat").document(chatID);
+        CollectionReference ChatCollRef = chatDocRef.collection("Chat");
+        DocumentReference BubbleDocRef = ChatCollRef.document();
+
+        Map<String, Object> newBubble = new HashMap<>();
+        newBubble.put("DateSend", new Date(System.currentTimeMillis()));
+        newBubble.put("Sender", senderUsrRef);
+        newBubble.put("value", messageText);
+        BubbleDocRef.set(newBubble).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull @NotNull Task<Void> task) {
+                Toast.makeText(getContext(), "Wysyłanie zakończone", Toast.LENGTH_SHORT).show();
+            }
+        })
+        .addOnFailureListener(e -> {
+            Toast.makeText(getContext(), "Błąd podczas wysyłania", Toast.LENGTH_SHORT).show();
+        });
     }
 
    @Override
